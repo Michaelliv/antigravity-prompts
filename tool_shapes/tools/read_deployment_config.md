@@ -1,23 +1,24 @@
 # `read_deployment_config`
 
 **Cortex step type:** `CortexStepReadDeploymentConfig`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (9)
+## Fields (9)
 
-Field names recovered from `(*CortexStepReadDeploymentConfig).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepReadDeploymentConfig {
+  string project_path = 1;
+  string deployment_config_uri = 2;
+  exa.codeium_common_pb.WebAppDeploymentConfig deployment_config = 3;
+  repeated string missing_file_uris = 4;
+  bool will_upload_node_modules = 5;
+  bool will_upload_dist = 6;
+  repeated string ignore_file_uris = 7;
+  uint32 num_files_to_upload = 8;
+  repeated string env_file_uris = 9;
+}
+```
 
-- `DeploymentConfig`
-- `DeploymentConfigUri`
-- `EnvFileUris`
-- `IgnoreFileUris`
-- `MissingFileUris`
-- `NumFilesToUpload`
-- `ProjectPath`
-- `WillUploadDist`
-- `WillUploadNodeModules`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

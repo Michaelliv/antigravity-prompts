@@ -1,51 +1,49 @@
 # `capture_browser_screenshot`
 
 **Cortex step type:** `CortexStepCaptureBrowserScreenshot`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (12)
+## Fields (12)
 
-Field names recovered from `(*CortexStepCaptureBrowserScreenshot).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepCaptureBrowserScreenshot {
+  string page_id = 1;
+  bool save_screenshot = 7;
+  string screenshot_name = 10;
+  bool capture_by_element_index = 8;
+  int32 element_index = 9;
+  bool capture_beyond_viewport = 12;
+  bool user_rejected = 2;
+  exa.codeium_common_pb.ImageData screenshot = 3;
+  exa.codeium_common_pb.Media media_screenshot = 11;
+  exa.codeium_common_pb.Viewport screenshot_viewport = 13;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 4;
+  exa.cortex_pb.AutoRunDecision auto_run_decision = 5;
+}
+```
 
-- `AutoRunDecision`
-- `CaptureBeyondViewport`
-- `CaptureByElementIndex`
-- `ElementIndex`
-- `MediaScreenshot`
-- `PageId`
-- `PageMetadata`
-- `SaveScreenshot`
-- `Screenshot`
-- `ScreenshotName`
-- `ScreenshotViewport`
-- `UserRejected`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (5)
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```
 
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `screenshot`
 ```
 If true, saves the screenshot as an artifact.
 ```
-
-### 2.
 ```
 page_id of the Browser page to capture a screenshot of.
 ```
-
-### 3.
 ```
 If true, captures a screenshot of a specific element by index instead of the full viewport.
-```
-
-### 4.
-```
-Name of the screenshot to save. Should be all lowercase with underscores, describing what the screenshot contains. Maximum 3 words. Example: 'login_page_error'
-```
-
-### 5.
-```
-If true, captures an extended screenshot starting from the current scroll position downward, up to 4000px or the end of page content, whichever is less. To capture content above or below this range, scroll first and then capture.
 ```

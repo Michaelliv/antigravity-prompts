@@ -1,18 +1,19 @@
 # `set_up_cloud_sql`
 
 **Cortex step type:** `CortexStepSetUpCloudSql`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepSetUpCloudSql).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepSetUpCloudSql {
+  string error_message = 1;
+  exa.cortex_pb.SetUpCloudSqlErrorCode rpc_error_code = 2;
+  exa.cortex_pb.SetUpCloudSqlResult result = 3;
+  exa.cortex_pb.SetUpCloudSqlAppConfig app_config = 4;
+}
+```
 
-- `AppConfig`
-- `ErrorMessage`
-- `Result`
-- `RpcErrorCode`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

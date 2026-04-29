@@ -1,18 +1,18 @@
 # `proposal_feedback`
 
 **Cortex step type:** `CortexStepProposalFeedback`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (3)
 
-Field names recovered from `(*CortexStepProposalFeedback).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepProposalFeedback {
+  exa.cortex_pb.AcknowledgementType acknowledgement_type = 1;
+  uint32 target_step_index = 2;
+  exa.cortex_pb.ReplacementChunk replacement_chunk = 3;
+}
+```
 
-- `AcknowledgementType`
-- `ReplacementChunk`
-- `Target`
-- `TargetStepIndex`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

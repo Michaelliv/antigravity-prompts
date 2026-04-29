@@ -1,8 +1,12 @@
 # `EnterpriseToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (2)
 
-- `CustomWorkspace`
-- `EnforceWorkspaceValidation`
+```proto
+message EnterpriseToolConfig {
+  bool enforce_workspace_validation = 1;
+  repeated string custom_workspace = 2;
+}
+```

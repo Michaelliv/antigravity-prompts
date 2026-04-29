@@ -1,19 +1,25 @@
 # `install_applet_package`
 
 **Cortex step type:** `CortexStepInstallAppletPackage`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepInstallAppletPackage).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepInstallAppletPackage {
+  string package_name = 1;
+  string error_message = 2;
+  string logs = 3;
+  bool is_dev_dependency = 4;
+  repeated string package_names = 5;
+}
+```
 
-- `ErrorMessage`
-- `IsDevDependency`
-- `Logs`
-- `PackageName`
-- `PackageNames`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `logs`
+```
+page_id of the Browser page to capture console logs of.
+```

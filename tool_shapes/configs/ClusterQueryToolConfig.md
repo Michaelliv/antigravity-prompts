@@ -1,7 +1,11 @@
 # `ClusterQueryToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (1)
 
-- `MaxClusterQueryResults`
+```proto
+message ClusterQueryToolConfig {
+  uint32 max_cluster_query_results = 1;
+}
+```

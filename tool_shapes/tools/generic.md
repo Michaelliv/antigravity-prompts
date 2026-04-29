@@ -1,16 +1,17 @@
 # `generic`
 
 **Cortex step type:** `CortexStepGeneric`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepGeneric).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepGeneric {
+  repeated exa.cortex_pb.CortexStepGeneric.ArgsEntry args = 1;
+  exa.cortex_pb.GenericStepResult result = 2;
+}
+```
 
-- `Args`
-- `Result`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

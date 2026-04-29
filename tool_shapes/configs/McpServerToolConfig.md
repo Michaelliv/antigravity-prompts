@@ -1,7 +1,11 @@
 # `McpServerToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (1)
 
-- `Background`
+```proto
+message McpServerToolConfig {
+  exa.cortex_pb.McpToolBackgroundMode background = 1;
+}
+```

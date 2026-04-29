@@ -1,30 +1,24 @@
 # `ask_question`
 
 **Cortex step type:** `CortexStepAskQuestion`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (1)
+## Fields (1)
 
-Field names recovered from `(*CortexStepAskQuestion).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepAskQuestion {
+  repeated exa.cortex_pb.AskQuestionEntry questions = 1;
+}
+```
 
-- `Questions`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (3)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `questions`
 ```
 The list of questions to ask.
 ```
-
-### 2.
-```
-The question to ask the user. Do NOT add 'select all that apply' or similar text to the question title.
-```
-
-### 3.
 ```
 The text for each option, formatted as the user's response. Must have at least 2 options. Do NOT add an 'Other' option to questions.
 ```

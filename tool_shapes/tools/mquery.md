@@ -1,19 +1,31 @@
 # `mquery`
 
 **Cortex step type:** `CortexStepMquery`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepMquery).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepMquery {
+  exa.cortex_pb.PlanInput input = 1;
+  repeated exa.context_module_pb.CciWithSubrangeWithRetrievalMetadata ccis = 2;
+  uint32 num_tokens_processed = 3;
+  uint32 num_items_scored = 4;
+  exa.cortex_pb.SemanticCodebaseSearchType search_type = 5;
+}
+```
 
-- `Ccis`
-- `Input`
-- `NumItemsScored`
-- `NumTokensProcessed`
-- `SearchType`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `input`
+```
+The text to input into the element.
+```
+```
+The page_id of the browser page to input text on.
+```
+```
+Index of the annotated DOM element to input text into.
+```

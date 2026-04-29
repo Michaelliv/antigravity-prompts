@@ -1,28 +1,41 @@
 # `browser_mouse_up`
 
 **Cortex step type:** `CortexStepBrowserMouseUp`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepBrowserMouseUp).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepBrowserMouseUp {
+  string page_id = 1;
+  string button = 2;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 3;
+  string browser_state_diff = 4;
+}
+```
 
-- `BrowserStateDiff`
-- `Button`
-- `PageId`
-- `PageMetadata`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (2)
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```
 
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `button`
+```
+page_id of the Browser page to press the mouse button on
+```
 ```
 page_id of the Browser page to release the mouse button on
 ```
-
-### 2.
 ```
-Mouse button to release. Options are 'left', 'right', or 'middle'.
+Mouse button to press. Options are 'left', 'right', or 'middle'.
 ```

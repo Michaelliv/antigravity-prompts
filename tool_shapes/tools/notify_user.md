@@ -1,22 +1,23 @@
 # `notify_user`
 
 **Cortex step type:** `CortexStepNotifyUser`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (8)
+## Fields (8)
 
-Field names recovered from `(*CortexStepNotifyUser).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepNotifyUser {
+  repeated string review_absolute_uris = 1;
+  string notification_content = 2;
+  bool is_blocking = 3;
+  float confidence_score = 4;
+  string confidence_justification = 5;
+  bool should_auto_proceed = 8;
+  string diffs_uri = 6;
+  bool ask_for_user_feedback = 7;
+}
+```
 
-- `AskForUserFeedback`
-- `ConfidenceJustification`
-- `ConfidenceScore`
-- `DiffsUri`
-- `IsBlocking`
-- `NotificationContent`
-- `ReviewAbsoluteUris`
-- `ShouldAutoProceed`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

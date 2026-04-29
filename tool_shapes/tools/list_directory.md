@@ -1,19 +1,20 @@
 # `list_directory`
 
 **Cortex step type:** `CortexStepListDirectory`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepListDirectory).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepListDirectory {
+  string directory_path_uri = 1;
+  repeated string children = 2;
+  repeated exa.cortex_pb.ListDirectoryResult results = 3;
+  bool dir_not_found = 4;
+  exa.cortex_pb.FilePermissionInteractionSpec file_permission_request = 5;
+}
+```
 
-- `Children`
-- `DirNotFound`
-- `DirectoryPathUri`
-- `FilePermissionRequest`
-- `Results`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

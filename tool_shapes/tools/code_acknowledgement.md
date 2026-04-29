@@ -1,18 +1,19 @@
 # `code_acknowledgement`
 
 **Cortex step type:** `CortexStepCodeAcknowledgement`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepCodeAcknowledgement).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepCodeAcknowledgement {
+  bool is_accept = 3;
+  string written_feedback = 4;
+  exa.cortex_pb.CodeAcknowledgementScope acknowledgement_scope = 5;
+  repeated exa.cortex_pb.CodeAcknowledgementInfo code_acknowledgement_infos = 7;
+}
+```
 
-- `AcknowledgementScope`
-- `CodeAcknowledgementInfos`
-- `IsAccept`
-- `WrittenFeedback`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

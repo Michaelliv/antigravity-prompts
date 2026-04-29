@@ -1,16 +1,16 @@
 # `state`
 
 **Cortex step type:** `CortexStepState`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (1)
 
-Field names recovered from `(*CortexStepState).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepState {
+  exa.cortex_pb.CodingStepState coding = 1;
+}
+```
 
-- `Coding`
-- `Step`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

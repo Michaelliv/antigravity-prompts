@@ -1,17 +1,18 @@
 # `read_notebook`
 
 **Cortex step type:** `CortexStepReadNotebook`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (3)
+## Fields (3)
 
-Field names recovered from `(*CortexStepReadNotebook).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepReadNotebook {
+  string tool_name = 1;
+  exa.cortex_pb.CortexStepReadNotebook.Args args = 2;
+  exa.cortex_pb.CortexStepReadNotebook.Reply reply = 3;
+}
+```
 
-- `Args`
-- `Reply`
-- `ToolName`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

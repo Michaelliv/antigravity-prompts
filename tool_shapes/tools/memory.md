@@ -1,18 +1,35 @@
 # `memory`
 
 **Cortex step type:** `CortexStepMemory`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepMemory).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepMemory {
+  string memory_id = 1;
+  exa.cortex_pb.CortexMemory memory = 2;
+  exa.cortex_pb.CortexMemory prev_memory = 4;
+  exa.cortex_pb.MemoryActionType action = 3;
+}
+```
 
-- `Action`
-- `Memory`
-- `MemoryId`
-- `PrevMemory`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
+### `memory`
+```
+Number of characters to view. Make this as small as possible to avoid excessive memory usage.
+```
 
-_(no descriptions confidently mapped)_
+### `action`
+```
+The input to send to the task. Required when Action is 'send_input'.
+```
+```
+The ID of the message to read. Required when Action is 'read'.
+```
+```
+The type of cell: 'code', 'markdown', or 'raw'. Required for 'add' action.
+```

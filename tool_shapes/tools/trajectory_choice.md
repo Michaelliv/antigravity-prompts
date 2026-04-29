@@ -1,17 +1,18 @@
 # `trajectory_choice`
 
 **Cortex step type:** `CortexStepTrajectoryChoice`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (3)
+## Fields (3)
 
-Field names recovered from `(*CortexStepTrajectoryChoice).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepTrajectoryChoice {
+  repeated string proposal_trajectory_ids = 1;
+  int32 choice = 2;
+  string reason = 3;
+}
+```
 
-- `Choice`
-- `ProposalTrajectoryIds`
-- `Reason`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

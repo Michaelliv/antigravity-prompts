@@ -1,23 +1,19 @@
 # `view_code_item`
 
 **Cortex step type:** `CortexStepViewCodeItem`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepViewCodeItem).Get*` symbols (includes both inputs and outputs).
-
-- `AbsoluteUri`
-- `Ccis`
-- `FilePermissionRequest`
-- `NodePaths`
-
-
-## Parameter descriptions (1)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+```proto
+message CortexStepViewCodeItem {
+  string absolute_uri = 1;
+  repeated string node_paths = 4;
+  repeated exa.codeium_common_pb.CodeContextItem ccis = 5;
+  exa.cortex_pb.FilePermissionInteractionSpec file_permission_request = 6;
+}
 ```
-Path of the node within the file, e.g package.class.FunctionName
-```
+
+## Field descriptions
+
+From `jsonschema_description:` tags in the binary, matched by field name.

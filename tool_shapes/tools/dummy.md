@@ -1,16 +1,36 @@
 # `dummy`
 
 **Cortex step type:** `CortexStepDummy`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepDummy).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepDummy {
+  uint32 input = 1;
+  uint32 output = 2;
+}
+```
 
-- `Input`
-- `Output`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
+### `input`
+```
+The text to input into the element.
+```
+```
+The page_id of the browser page to input text on.
+```
+```
+Index of the annotated DOM element to input text into.
+```
 
-_(no descriptions confidently mapped)_
+### `output`
+```
+The command ID from a previous run_command call. This is returned in the run_command output.
+```
+```
+Amount of time to wait for output after sending input. Keep the value as small as possible, but large enough to capture the output you expect. Must be between 500ms and 10000ms.
+```

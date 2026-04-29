@@ -1,18 +1,19 @@
 # `agency_tool_call`
 
 **Cortex step type:** `CortexStepAgencyToolCall`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepAgencyToolCall).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepAgencyToolCall {
+  string agent_name = 1;
+  string function_name = 2;
+  repeated google.protobuf.Any request_messages = 3;
+  repeated google.protobuf.Any response_messages = 4;
+}
+```
 
-- `AgentName`
-- `FunctionName`
-- `RequestMessages`
-- `ResponseMessages`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

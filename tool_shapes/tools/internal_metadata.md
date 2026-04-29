@@ -1,15 +1,16 @@
 # `internal_metadata`
 
 **Cortex step type:** `CortexStepInternalMetadata`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (1)
+## Fields (1)
 
-Field names recovered from `(*CortexStepInternalMetadata).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepInternalMetadata {
+  repeated exa.cortex_pb.StatusTransition status_transitions = 1;
+}
+```
 
-- `StatusTransitions`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

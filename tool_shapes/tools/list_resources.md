@@ -1,18 +1,35 @@
 # `list_resources`
 
 **Cortex step type:** `CortexStepListResources`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepListResources).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepListResources {
+  string server_name = 1;
+  string cursor = 2;
+  repeated exa.cortex_pb.McpResource resources = 3;
+  string next_cursor = 4;
+}
+```
 
-- `Cursor`
-- `NextCursor`
-- `Resources`
-- `ServerName`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
+### `cursor`
+```
+x-coordinate of the pixel to move the mouse cursor to.
+```
+```
+y-coordinate of the pixel to move the mouse cursor to.
+```
+```
+page_id of the Browser page to move the mouse cursor to.
+```
 
-_(no descriptions confidently mapped)_
+### `resources`
+```
+Name of the server to list available resources from.
+```

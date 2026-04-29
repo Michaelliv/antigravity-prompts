@@ -1,16 +1,17 @@
 # `plan_input`
 
 **Cortex step type:** `CortexStepPlanInput`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepPlanInput).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepPlanInput {
+  exa.cortex_pb.PlanInput plan_input = 1;
+  bool user_provided = 2;
+}
+```
 
-- `PlanInput`
-- `UserProvided`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

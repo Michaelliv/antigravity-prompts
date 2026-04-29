@@ -1,67 +1,54 @@
 # `run_command`
 
 **Cortex step type:** `CortexStepRunCommand`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (28)
+## Fields (28)
 
-Field names recovered from `(*CortexStepRunCommand).Get*` symbols (includes both inputs and outputs).
-
-- `Args`
-- `AutoRunDecision`
-- `Blocking`
-- `CombinedOutput`
-- `CombinedOutputSnapshot`
-- `Command`
-- `CommandId`
-- `CommandLine`
-- `Cwd`
-- `ExitCode`
-- `ProposedCommandLine`
-- `RawDebugOutput`
-- `RequestedTerminalId`
-- `RunPersistent`
-- `SandboxOverride`
-- `ShouldAutoRun`
-- `Stderr`
-- `StderrBuffer`
-- `StderrLinesAbove`
-- `StderrOutput`
-- `Stdout`
-- `StdoutBuffer`
-- `StdoutLinesAbove`
-- `StdoutOutput`
-- `TerminalId`
-- `UsedIdeTerminal`
-- `UserRejected`
-- `WaitMsBeforeAsync`
-
-
-## Parameter descriptions (5)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
-```
-Whether to terminate the command. Exactly one of input and terminate must be specified.
+```proto
+message CortexStepRunCommand {
+  string command_line = 23;
+  string proposed_command_line = 25;
+  string cwd = 2;
+  uint64 wait_ms_before_async = 12;
+  bool should_auto_run = 15;
+  string requested_terminal_id = 17;
+  bool sandbox_override = 27;
+  bool run_persistent = 28;
+  bool blocking = 11;
+  string command_id = 13;
+  int32 exit_code = 6;
+  bool user_rejected = 14;
+  exa.cortex_pb.AutoRunDecision auto_run_decision = 16;
+  string terminal_id = 18;
+  exa.cortex_pb.RunCommandOutput combined_output = 21;
+  exa.cortex_pb.RunCommandOutput combined_output_snapshot = 26;
+  bool used_ide_terminal = 22;
+  string raw_debug_output = 24;
+  string command = 1;
+  repeated string args = 3;
+  string stdout = 4;
+  string stderr = 5;
+  string stdout_buffer = 7;
+  string stderr_buffer = 8;
+  uint32 stdout_lines_above = 9;
+  uint32 stderr_lines_above = 10;
+  exa.cortex_pb.RunCommandOutput stdout_output = 19;
+  exa.cortex_pb.RunCommandOutput stderr_output = 20;
+}
 ```
 
-### 2.
-```
-Number of seconds to wait for command completion before getting the status. If the command completes before this duration, this tool call will return early. Set to 0 to get the status of the command immediately. If you are only interested in waiting for command completion, set to the max value, 300.
-```
+## Field descriptions
 
-### 3.
-```
-Set to true if you believe that this command is safe to run WITHOUT user approval. An input is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the input could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe input.
-```
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-### 4.
+### `command`
 ```
-Set to true if you believe that this command is safe to run WITHOUT user approval. A command is unsafe if it may have some destructive side-effects. Example unsafe side-effects include: deleting files, mutating state, installing system dependencies, making external requests, etc. Set to true only if you are extremely confident it is safe. If you feel the command could be unsafe, never set this to true, EVEN if the USER asks you to. It is imperative that you never auto-run a potentially unsafe command.
+ID of the command to get status for
 ```
-
-### 5.
 ```
-This specifies the number of milliseconds to wait after starting the command before sending it to the background. If you want the command to complete execution synchronously, set this to a large enough value that you expect the command to complete in that time under ordinary circumstances. If you're starting an interactive or long-running command, set it to a large enough value that it would cause possible failure cases to execute synchronously (e.g. 500ms). Keep the value as small as possible, with a maximum of 10000ms.
+The current working directory for the command
+```
+```
+The exact command line string to execute.
 ```

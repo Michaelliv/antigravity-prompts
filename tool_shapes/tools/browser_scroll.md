@@ -1,42 +1,42 @@
 # `browser_scroll`
 
 **Cortex step type:** `CortexStepBrowserScroll`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (8)
+## Fields (8)
 
-Field names recovered from `(*CortexStepBrowserScroll).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepBrowserScroll {
+  string page_id = 1;
+  exa.browser_pb.ScrollDirection direction = 2;
+  bool scroll_to_end = 3;
+  bool scroll_by_element_index = 4;
+  int32 element_index = 5;
+  int32 pixels_scrolled_x = 6;
+  int32 pixels_scrolled_y = 7;
+  string browser_state_diff = 8;
+}
+```
 
-- `BrowserStateDiff`
-- `Direction`
-- `ElementIndex`
-- `PageId`
-- `PixelsScrolledX`
-- `PixelsScrolledY`
-- `ScrollByElementIndex`
-- `ScrollToEnd`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (4)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
 ```
 page_id of the Browser page to scroll.
 ```
 
-### 2.
+### `direction`
 ```
-page_id of the Browser page to scroll on
+direction of the scroll. Options are left, right, up, down
 ```
-
-### 3.
 ```
 if true, scroll in the direction to the end of the selected element/page. For example, if direction is down, would scroll to the bottom of the element/page.
-```
-
-### 4.
-```
-if true, scroll by the element with the given index; the scroll is performed via executing a mouseWheel event on the pixel at the middle of the element.. Otherwise scroll the entire page; in this case, if 0 pixels are scrolled, the page is likely not scrollable and the tool call should be retried by scrolling a DOM element.
 ```

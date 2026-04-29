@@ -1,7 +1,11 @@
 # `AskQuestionToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (1)
 
-- `Enabled`
+```proto
+message AskQuestionToolConfig {
+  bool enabled = 1;
+}
+```

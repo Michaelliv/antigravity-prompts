@@ -1,19 +1,28 @@
 # `cloud_s_q_l_execute_s_q_l`
 
 **Cortex step type:** `CortexStepCloudSQLExecuteSQL`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepCloudSQLExecuteSQL).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepCloudSQLExecuteSQL {
+  string project_id = 1;
+  string instance_name = 2;
+  string sql_statement = 3;
+  string error_message = 4;
+  string output = 5;
+}
+```
 
-- `ErrorMessage`
-- `InstanceName`
-- `Output`
-- `ProjectId`
-- `SqlStatement`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `output`
+```
+The command ID from a previous run_command call. This is returned in the run_command output.
+```
+```
+Amount of time to wait for output after sending input. Keep the value as small as possible, but large enough to capture the output you expect. Must be between 500ms and 10000ms.
+```

@@ -1,17 +1,23 @@
 # `view_content_chunk`
 
 **Cortex step type:** `CortexStepViewContentChunk`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (3)
+## Fields (3)
 
-Field names recovered from `(*CortexStepViewContentChunk).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepViewContentChunk {
+  string document_id = 5;
+  int32 position = 2;
+  exa.codeium_common_pb.KnowledgeBaseItem cropped_item = 4;
+}
+```
 
-- `CroppedItem`
-- `DocumentId`
-- `Position`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `position`
+```
+If true, captures an extended screenshot starting from the current scroll position downward, up to 4000px or the end of page content, whichever is less. To capture content above or below this range, scroll first and then capture.
+```

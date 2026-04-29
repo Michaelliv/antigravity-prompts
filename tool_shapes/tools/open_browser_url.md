@@ -1,34 +1,58 @@
 # `open_browser_url`
 
 **Cortex step type:** `CortexStepOpenBrowserUrl`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (10)
+## Fields (10)
 
-Field names recovered from `(*CortexStepOpenBrowserUrl).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepOpenBrowserUrl {
+  string url = 1;
+  string page_id_to_replace = 8;
+  exa.cortex_pb.AutoRunDecision auto_run_decision = 2;
+  bool user_rejected = 3;
+  string page_id = 4;
+  exa.codeium_common_pb.KnowledgeBaseItem web_document = 5;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 6;
+  exa.codeium_common_pb.ImageData screenshot = 7;
+  exa.codeium_common_pb.Media media_screenshot = 10;
+  string browser_state_diff = 9;
+}
+```
 
-- `AutoRunDecision`
-- `BrowserStateDiff`
-- `MediaScreenshot`
-- `PageId`
-- `PageIdToReplace`
-- `PageMetadata`
-- `Screenshot`
-- `Url`
-- `UserRejected`
-- `WebDocument`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (2)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `url`
+```
+URL to read content from
+```
 ```
 The URL to open in the user's browser.
 ```
-
-### 2.
 ```
-An existing page ID which will be replaced with this new URL. You should provide a page_id in almost all cases. To open a new page, set this field to 'new_page'. IMPORTANT: Opening a new page should be extremely rare and only done if you are explicitly instructed to keep multiple pages open simultaneously. By default, always replace the most recently used page or any page not critical to your current task.
+Type of reference (e.g., file, conversation_id, url)
+```
+
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```
+
+### `screenshot`
+```
+If true, saves the screenshot as an artifact.
+```
+```
+page_id of the Browser page to capture a screenshot of.
+```
+```
+If true, captures a screenshot of a specific element by index instead of the full viewport.
 ```

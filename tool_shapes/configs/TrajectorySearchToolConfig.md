@@ -1,10 +1,14 @@
 # `TrajectorySearchToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (4)
 
-- `ConversationsEnabled`
-- `ForceDisable`
-- `MaxScoredChunks`
-- `UserActivitiesEnabled`
+```proto
+message TrajectorySearchToolConfig {
+  bool force_disable = 1;
+  bool conversations_enabled = 2;
+  bool user_activities_enabled = 3;
+  uint32 max_scored_chunks = 4;
+}
+```

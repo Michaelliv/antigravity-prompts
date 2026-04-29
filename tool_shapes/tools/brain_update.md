@@ -1,18 +1,18 @@
 # `brain_update`
 
 **Cortex step type:** `CortexStepBrainUpdate`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (3)
 
-Field names recovered from `(*CortexStepBrainUpdate).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepBrainUpdate {
+  exa.cortex_pb.BrainEntryType entry_type = 1;
+  exa.cortex_pb.BrainUpdateTrigger trigger = 3;
+  repeated exa.cortex_pb.BrainEntryDelta deltas = 2;
+}
+```
 
-- `Deltas`
-- `EntryType`
-- `Target`
-- `Trigger`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

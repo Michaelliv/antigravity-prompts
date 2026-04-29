@@ -1,15 +1,16 @@
 # `k_i_insertion`
 
 **Cortex step type:** `CortexStepKIInsertion`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (1)
+## Fields (1)
 
-Field names recovered from `(*CortexStepKIInsertion).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepKIInsertion {
+  repeated exa.cortex_pb.CortexStepKIInsertion.KiReferencesEntry ki_references = 1;
+}
+```
 
-- `KiReferences`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

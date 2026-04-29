@@ -1,25 +1,32 @@
 # `read_url_content`
 
 **Cortex step type:** `CortexStepReadUrlContent`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (6)
+## Fields (6)
 
-Field names recovered from `(*CortexStepReadUrlContent).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepReadUrlContent {
+  string url = 1;
+  exa.codeium_common_pb.KnowledgeBaseItem web_document = 2;
+  string resolved_url = 3;
+  uint32 latency_ms = 4;
+  bool user_rejected = 5;
+  string content_path = 6;
+}
+```
 
-- `ContentPath`
-- `LatencyMs`
-- `ResolvedUrl`
-- `Url`
-- `UserRejected`
-- `WebDocument`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (1)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `url`
 ```
 URL to read content from
+```
+```
+The URL to open in the user's browser.
+```
+```
+Type of reference (e.g., file, conversation_id, url)
 ```

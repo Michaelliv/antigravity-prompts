@@ -1,21 +1,22 @@
 # `check_deploy_status`
 
 **Cortex step type:** `CortexStepCheckDeployStatus`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (7)
+## Fields (7)
 
-Field names recovered from `(*CortexStepCheckDeployStatus).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepCheckDeployStatus {
+  string antigravity_deployment_id = 1;
+  exa.codeium_common_pb.AntigravityDeployment deployment = 2;
+  exa.codeium_common_pb.DeploymentBuildStatus build_status = 3;
+  string build_error = 4;
+  string build_logs = 5;
+  bool is_claimed = 6;
+  string claim_url = 7;
+}
+```
 
-- `AntigravityDeploymentId`
-- `BuildError`
-- `BuildLogs`
-- `BuildStatus`
-- `ClaimUrl`
-- `Deployment`
-- `IsClaimed`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

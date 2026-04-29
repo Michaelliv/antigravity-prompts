@@ -1,16 +1,25 @@
 # `finish`
 
 **Cortex step type:** `CortexStepFinish`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepFinish).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepFinish {
+  repeated exa.cortex_pb.CortexStepFinish.OutputEntry output = 1;
+  string output_string = 2;
+}
+```
 
-- `Output`
-- `OutputString`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `output`
+```
+The command ID from a previous run_command call. This is returned in the run_command output.
+```
+```
+Amount of time to wait for output after sending input. Keep the value as small as possible, but large enough to capture the output you expect. Must be between 500ms and 10000ms.
+```

@@ -1,16 +1,17 @@
 # `delete_directory`
 
 **Cortex step type:** `CortexStepDeleteDirectory`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepDeleteDirectory).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepDeleteDirectory {
+  string directory_path_uri = 1;
+  bool force = 2;
+}
+```
 
-- `DirectoryPathUri`
-- `Force`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

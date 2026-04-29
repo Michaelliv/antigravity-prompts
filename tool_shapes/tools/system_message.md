@@ -1,18 +1,30 @@
 # `system_message`
 
 **Cortex step type:** `CortexStepSystemMessage`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepSystemMessage).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepSystemMessage {
+  string message = 1;
+  exa.cortex_pb.StepRenderInfo render_info = 2;
+  string event_type = 3;
+  exa.cortex_pb.AgentMessage agent_message = 4;
+}
+```
 
-- `AgentMessage`
-- `EventType`
-- `Message`
-- `RenderInfo`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `message`
+```
+The message content.
+```
+```
+The ID of the message to read. Required when Action is 'read'.
+```
+```
+The recipient ID to send the message to, e.g. a subagent conversation ID.
+```

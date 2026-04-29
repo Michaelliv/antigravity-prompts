@@ -1,34 +1,53 @@
 # `browser_select_option`
 
 **Cortex step type:** `CortexStepBrowserSelectOption`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepBrowserSelectOption).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepBrowserSelectOption {
+  string page_id = 1;
+  int32 index = 2;
+  string value = 3;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 6;
+  string browser_state_diff = 7;
+}
+```
 
-- `BrowserStateDiff`
-- `Index`
-- `PageId`
-- `PageMetadata`
-- `Value`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (3)
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```
 
-From `jsonschema_description:` struct tags, attributed by content keyword.
+### `index`
+```
+index of the element to scroll on
+```
+```
+Index of the annotated DOM element to click on.
+```
+```
+Index of the annotated DOM element to input text into.
+```
 
-### 1.
+### `value`
+```
+Value of the reference
+```
 ```
 The value or text of the option to select from the dropdown.
 ```
-
-### 2.
 ```
-Index of the annotated DOM select element to select an option from.
-```
-
-### 3.
-```
-If true, the user can select multiple options.
+Optional. Startline to view, 1-indexed as usual, inclusive. This value must be less than or equal to EndLine.
 ```

@@ -1,18 +1,19 @@
 # `write_blob`
 
 **Cortex step type:** `CortexStepWriteBlob`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepWriteBlob).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepWriteBlob {
+  string blob_id = 1;
+  string target_path = 2;
+  string error_message = 3;
+  int64 bytes_written = 4;
+}
+```
 
-- `BlobId`
-- `BytesWritten`
-- `ErrorMessage`
-- `TargetPath`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

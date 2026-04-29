@@ -1,23 +1,30 @@
 # `browser_get_network_request`
 
 **Cortex step type:** `CortexStepBrowserGetNetworkRequest`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepBrowserGetNetworkRequest).Get*` symbols (includes both inputs and outputs).
-
-- `NetworkRequestDetails`
-- `PageId`
-- `PageMetadata`
-- `RequestId`
-
-
-## Parameter descriptions (1)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+```proto
+message CortexStepBrowserGetNetworkRequest {
+  string page_id = 1;
+  string request_id = 2;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 3;
+  string network_request_details = 4;
+}
 ```
-The page_id of the browser page to get network request from.
+
+## Field descriptions
+
+From `jsonschema_description:` tags in the binary, matched by field name.
+
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
 ```

@@ -1,15 +1,27 @@
 # `clipboard`
 
 **Cortex step type:** `CortexStepClipboard`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (1)
+## Fields (1)
 
-Field names recovered from `(*CortexStepClipboard).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepClipboard {
+  string content = 1;
+}
+```
 
-- `Content`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `content`
+```
+The message content.
+```
+```
+URL to read content from
+```
+```
+Content of the prompt section.
+```

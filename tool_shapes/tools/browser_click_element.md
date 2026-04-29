@@ -1,31 +1,55 @@
 # `browser_click_element`
 
 **Cortex step type:** `CortexStepBrowserClickElement`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (7)
+## Fields (7)
 
-Field names recovered from `(*CortexStepBrowserClickElement).Get*` symbols (includes both inputs and outputs).
-
-- `BrowserStateDiff`
-- `ClickType`
-- `Description`
-- `Index`
-- `PageId`
-- `PageMetadata`
-- `UserRejected`
-
-
-## Parameter descriptions (2)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
-```
-The page_id of the browser page to click on.
+```proto
+message CortexStepBrowserClickElement {
+  string page_id = 1;
+  int32 index = 2;
+  string description = 3;
+  exa.browser_pb.ClickType click_type = 5;
+  bool user_rejected = 4;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 6;
+  string browser_state_diff = 7;
+}
 ```
 
-### 2.
+## Field descriptions
+
+From `jsonschema_description:` tags in the binary, matched by field name.
+
+### `page_id`
 ```
-Element name only (2-4 words, noun phrase). NOT an action sentence. Examples: 'Username Field', 'Submit Button', 'Login Link'. Never include verbs like 'clicking' or phrases like 'to focus'.
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```
+
+### `index`
+```
+index of the element to scroll on
+```
+```
+Index of the annotated DOM element to click on.
+```
+```
+Index of the annotated DOM element to input text into.
+```
+
+### `description`
+```
+A description of the changes that you are making to the file.
+```
+```
+Human-readable description of the JavaScript to execute
+```
+```
+Human-readable description of what this subagent does and when it should be used.
 ```

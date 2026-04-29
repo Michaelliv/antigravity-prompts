@@ -1,39 +1,31 @@
 # `browser_get_dom`
 
 **Cortex step type:** `CortexStepBrowserGetDom`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepBrowserGetDom).Get*` symbols (includes both inputs and outputs).
-
-- `DomTree`
-- `PageId`
-- `PageMetadata`
-- `SerializedDomTree`
-- `SerializedDomTreeUri`
-
-
-## Parameter descriptions (4)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
-```
-Index of the annotated DOM element to click on.
+```proto
+message CortexStepBrowserGetDom {
+  string page_id = 1;
+  exa.codeium_common_pb.DOMTree dom_tree = 2;
+  string serialized_dom_tree = 3;
+  string serialized_dom_tree_uri = 5;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 4;
+}
 ```
 
-### 2.
-```
-page_id of the Browser page to get the DOM tree of
-```
+## Field descriptions
 
-### 3.
-```
-Index of the annotated DOM element to input text into.
-```
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-### 4.
+### `page_id`
 ```
-The index of the element to capture (required if CaptureByElementIndex is true). Get the index using browser_get_dom.
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
 ```

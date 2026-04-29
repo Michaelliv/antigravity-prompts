@@ -1,53 +1,40 @@
 # `view_file`
 
 **Cortex step type:** `CortexStepViewFile`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (14)
+## Fields (14)
 
-Field names recovered from `(*CortexStepViewFile).Get*` symbols (includes both inputs and outputs).
-
-- `AbsolutePathUri`
-- `BinaryData`
-- `Content`
-- `EndLine`
-- `FilePermissionRequest`
-- `IsInjectedReminder`
-- `IsSkillFile`
-- `MediaData`
-- `NumBytes`
-- `NumLines`
-- `RawContent`
-- `SkillMetadata`
-- `StartLine`
-- `TriggeredMemories`
-
-
-## Parameter descriptions (5)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
-```
-Path to file to view. Must be an absolute path.
+```proto
+message CortexStepViewFile {
+  string absolute_path_uri = 1;
+  uint32 start_line = 2;
+  uint32 end_line = 3;
+  string content = 4;
+  bool is_skill_file = 17;
+  exa.cortex_pb.SkillMetadata skill_metadata = 18;
+  string raw_content = 9;
+  exa.codeium_common_pb.ImageData binary_data = 14;
+  exa.codeium_common_pb.Media media_data = 15;
+  string triggered_memories = 10;
+  uint32 num_lines = 11;
+  uint32 num_bytes = 12;
+  bool is_injected_reminder = 13;
+  exa.cortex_pb.FilePermissionInteractionSpec file_permission_request = 16;
+}
 ```
 
-### 2.
-```
-Number of characters to view. Make this as small as possible to avoid excessive memory usage.
-```
+## Field descriptions
 
-### 3.
-```
-Optional. Startline to view, 1-indexed as usual, inclusive. This value must be less than or equal to EndLine.
-```
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-### 4.
+### `content`
 ```
-Optional. Endline to view, 1-indexed as usual, inclusive. This value must be greater than or equal to StartLine.
+The message content.
 ```
-
-### 5.
 ```
-Optional. Set to true only when reading a file to execute its instructions for a task. Set to false if the purpose is to edit, preview, or manage the file.
+URL to read content from
+```
+```
+Content of the prompt section.
 ```

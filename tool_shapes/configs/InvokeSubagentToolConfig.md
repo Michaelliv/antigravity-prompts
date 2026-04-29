@@ -1,9 +1,13 @@
 # `InvokeSubagentToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (3)
 
-- `Enabled`
-- `FastModel`
-- `HeavyModel`
+```proto
+message InvokeSubagentToolConfig {
+  bool enabled = 1;
+  exa.codeium_common_pb.Model fast_model = 2;
+  exa.codeium_common_pb.Model heavy_model = 3;
+}
+```

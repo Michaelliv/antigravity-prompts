@@ -1,8 +1,12 @@
 # `CodeSearchToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (2)
 
-- `CsPath`
-- `UseEvalTag`
+```proto
+message CodeSearchToolConfig {
+  string cs_path = 1;
+  bool use_eval_tag = 2;
+}
+```

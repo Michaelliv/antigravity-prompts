@@ -1,16 +1,17 @@
 # `move`
 
 **Cortex step type:** `CortexStepMove`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepMove).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepMove {
+  string src_absolute_path_uri = 1;
+  string dst_absolute_path_uri = 2;
+}
+```
 
-- `DstAbsolutePathUri`
-- `SrcAbsolutePathUri`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

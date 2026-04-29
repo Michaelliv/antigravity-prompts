@@ -1,17 +1,40 @@
 # `read_terminal`
 
 **Cortex step type:** `CortexStepReadTerminal`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (3)
+## Fields (3)
 
-Field names recovered from `(*CortexStepReadTerminal).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepReadTerminal {
+  string process_id = 1;
+  string name = 2;
+  string contents = 3;
+}
+```
 
-- `Contents`
-- `Name`
-- `ProcessId`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
+### `name`
+```
+Name of the server to read the resource from.
+```
+```
+Name of the server to list available resources from.
+```
+```
+Type name of the subagent to invoke.
+```
 
-_(no descriptions confidently mapped)_
+### `contents`
+```
+The code contents to write to the file.
+```
+```
+Path to list contents of, should be absolute path to a directory
+```
+```
+The window contents width in display independent pixels. Only used when WindowState is 'normal'.
+```

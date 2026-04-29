@@ -1,35 +1,32 @@
 # `generate_image`
 
 **Cortex step type:** `CortexStepGenerateImage`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (6)
+## Fields (6)
 
-Field names recovered from `(*CortexStepGenerateImage).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepGenerateImage {
+  string prompt = 1;
+  repeated string image_paths = 2;
+  string image_name = 4;
+  exa.codeium_common_pb.ImageData generated_image = 3;
+  string model_name = 5;
+  exa.codeium_common_pb.Media generated_media = 6;
+}
+```
 
-- `GeneratedImage`
-- `GeneratedMedia`
-- `ImageName`
-- `ImagePaths`
-- `ModelName`
-- `Prompt`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (3)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+### `prompt`
+```
+Title of the prompt section.
+```
 ```
 The text prompt to generate an image for.
 ```
-
-### 2.
 ```
-Name of the generated image to save. Should be all lowercase with underscores, describing what the image contains. Maximum 3 words. Example: 'login_page_mockup'
-```
-
-### 3.
-```
-Optional absolute paths to the images to use in generation. You can pass in images here if you would like to edit or combine images. You can pass in artifact images and any images in the file system. Note: you cannot pass in more than 3 images.
+Content of the prompt section.
 ```

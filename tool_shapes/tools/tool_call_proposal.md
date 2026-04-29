@@ -1,15 +1,16 @@
 # `tool_call_proposal`
 
 **Cortex step type:** `CortexStepToolCallProposal`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (1)
+## Fields (1)
 
-Field names recovered from `(*CortexStepToolCallProposal).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepToolCallProposal {
+  exa.codeium_common_pb.ChatToolCall tool_call = 1;
+}
+```
 
-- `ToolCall`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

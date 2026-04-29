@@ -1,19 +1,31 @@
 # `browser_scroll_down`
 
 **Cortex step type:** `CortexStepBrowserScrollDown`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepBrowserScrollDown).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepBrowserScrollDown {
+  string page_id = 1;
+  bool scroll_to_end = 2;
+  bool scroll_by_element_index = 3;
+  int32 element_index = 4;
+  string browser_state_diff = 5;
+}
+```
 
-- `BrowserStateDiff`
-- `ElementIndex`
-- `PageId`
-- `ScrollByElementIndex`
-- `ScrollToEnd`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```

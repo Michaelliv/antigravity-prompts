@@ -1,13 +1,12 @@
-# `wait`
+# `knowledge_generation`
 
-**Cortex step type:** `CortexStepWait`
+**Cortex step type:** `CortexStepKnowledgeGeneration`
 **Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (1)
+## Fields (0)
 
 ```proto
-message CortexStepWait {
-  int64 duration_ms = 1;
+message CortexStepKnowledgeGeneration {
 }
 ```
 

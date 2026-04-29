@@ -1,8 +1,12 @@
 # `ReadKnowledgeBaseItemToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (2)
 
-- `Enabled`
-- `KnowledgeBaseItems`
+```proto
+message ReadKnowledgeBaseItemToolConfig {
+  bool enabled = 1;
+  repeated exa.codeium_common_pb.KnowledgeBaseItem knowledge_base_items = 2;
+}
+```

@@ -1,16 +1,17 @@
 # `file_breakdown`
 
 **Cortex step type:** `CortexStepFileBreakdown`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (2)
+## Fields (2)
 
-Field names recovered from `(*CortexStepFileBreakdown).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepFileBreakdown {
+  string absolute_path = 1;
+  exa.codeium_common_pb.DocumentOutline document_outline = 2;
+}
+```
 
-- `AbsolutePath`
-- `DocumentOutline`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

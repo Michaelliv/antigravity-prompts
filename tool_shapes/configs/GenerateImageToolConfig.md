@@ -1,8 +1,12 @@
 # `GenerateImageToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (2)
 
-- `ForceDisable`
-- `OutputDirectory`
+```proto
+message GenerateImageToolConfig {
+  bool force_disable = 1;
+  string output_directory = 2;
+}
+```

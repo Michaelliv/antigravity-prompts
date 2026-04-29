@@ -1,17 +1,29 @@
 # `git_commit`
 
 **Cortex step type:** `CortexStepGitCommit`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (3)
+## Fields (3)
 
-Field names recovered from `(*CortexStepGitCommit).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepGitCommit {
+  exa.cortex_pb.PlanInput input = 1;
+  string commit_message = 2;
+  string commit_hash = 3;
+}
+```
 
-- `CommitHash`
-- `CommitMessage`
-- `Input`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `input`
+```
+The text to input into the element.
+```
+```
+The page_id of the browser page to input text on.
+```
+```
+Index of the annotated DOM element to input text into.
+```

@@ -1,46 +1,55 @@
 # `browser_input`
 
 **Cortex step type:** `CortexStepBrowserInput`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (7)
+## Fields (7)
 
-Field names recovered from `(*CortexStepBrowserInput).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepBrowserInput {
+  string page_id = 1;
+  int32 index = 2;
+  string text = 3;
+  bool press_enter = 4;
+  bool clear_text = 5;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 6;
+  string browser_state_diff = 7;
+}
+```
 
-- `BrowserStateDiff`
-- `ClearText`
-- `Index`
-- `PageId`
-- `PageMetadata`
-- `PressEnter`
-- `Text`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions (5)
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
+```
 
-From `jsonschema_description:` struct tags, attributed by content keyword.
+### `index`
+```
+index of the element to scroll on
+```
+```
+Index of the annotated DOM element to click on.
+```
+```
+Index of the annotated DOM element to input text into.
+```
 
-### 1.
+### `text`
+```
+The text to input into the element.
+```
+```
+The text prompt to generate an image for.
+```
 ```
 Whether to clear existing text before inputting. Default is false.
-```
-
-### 2.
-```
-Whether to press Enter after inputting the text. Default is false.
-```
-
-### 3.
-```
-page_id of the Browser page to simulate a key press on
-```
-
-### 4.
-```
-Text to type sequentially, character by character. Use this for typing regular text content like letters, numbers, and basic symbols. Each character will be typed individually in sequence. Only specify one of Key or Text - use Text for typing regular content, not for keyboard shortcuts or special keys like F1, Control+C, etc.
-```
-
-### 5.
-```
-Name of the key/key combination to simulate. Examples of keys are: "F1" - "F12", "Digit0"- "Digit9", "KeyA"- "KeyZ", "Backquote", "Minus", "Equal", "Backslash", "Backspace", "Tab", "Delete", "Escape", "ArrowDown", "End", "Enter", "Home", "Insert", "PageDown", "PageUp", "ArrowRight", "ArrowUp", etc. This tool also supports combinations with modifiers (e.g., Control+Enter). Examples of modifiers are: "Shift", "Control", "Alt", "Meta", "ShiftLeft", "ControlOrMeta". "ControlOrMeta" resolves to "Control" on Windows and Linux and to "Meta" on macOS. Only specify one of Key or Text - use Key for keyboard shortcuts and special keys.
 ```

@@ -1,22 +1,29 @@
 # `browser_refresh_page`
 
 **Cortex step type:** `CortexStepBrowserRefreshPage`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (3)
+## Fields (3)
 
-Field names recovered from `(*CortexStepBrowserRefreshPage).Get*` symbols (includes both inputs and outputs).
-
-- `BrowserStateDiff`
-- `PageId`
-- `PageMetadata`
-
-
-## Parameter descriptions (1)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
+```proto
+message CortexStepBrowserRefreshPage {
+  string page_id = 1;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 2;
+  string browser_state_diff = 3;
+}
 ```
-page_id of the Browser page to refresh/reload
+
+## Field descriptions
+
+From `jsonschema_description:` tags in the binary, matched by field name.
+
+### `page_id`
+```
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
 ```

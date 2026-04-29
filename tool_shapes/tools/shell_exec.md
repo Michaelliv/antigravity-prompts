@@ -1,18 +1,38 @@
 # `shell_exec`
 
 **Cortex step type:** `CortexStepShellExec`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepShellExec).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepShellExec {
+  string command = 1;
+  int32 exit_code = 2;
+  string output = 3;
+  string error_message = 4;
+}
+```
 
-- `Command`
-- `ErrorMessage`
-- `ExitCode`
-- `Output`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
+### `command`
+```
+ID of the command to get status for
+```
+```
+The current working directory for the command
+```
+```
+The exact command line string to execute.
+```
 
-_(no descriptions confidently mapped)_
+### `output`
+```
+The command ID from a previous run_command call. This is returned in the run_command output.
+```
+```
+Amount of time to wait for output after sending input. Keep the value as small as possible, but large enough to capture the output you expect. Must be between 500ms and 10000ms.
+```

@@ -1,11 +1,15 @@
 # `FindToolConfig`
 
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
 ## Fields (5)
 
-- `DisableFallbackToLocalExecution`
-- `FdPath`
-- `ForceDisable`
-- `MaxFindResults`
-- `UseCodeSearch`
+```proto
+message FindToolConfig {
+  uint32 max_find_results = 1;
+  string fd_path = 2;
+  bool use_code_search = 3;
+  bool disable_fallback_to_local_execution = 4;
+  bool force_disable = 5;
+}
+```

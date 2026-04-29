@@ -1,28 +1,34 @@
 # `planner_response`
 
 **Cortex step type:** `CortexStepPlannerResponse`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (14)
+## Fields (14)
 
-Field names recovered from `(*CortexStepPlannerResponse).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepPlannerResponse {
+  string response = 1;
+  string modified_response = 8;
+  string thinking = 3;
+  string raw_thinking = 16;
+  string signature = 4;
+  bytes thinking_signature = 14;
+  bool thinking_redacted = 5;
+  string message_id = 6;
+  string provider_assigned_message_id = 15;
+  repeated exa.codeium_common_pb.ChatToolCall tool_calls = 7;
+  repeated exa.codeium_common_pb.KnowledgeBaseItemWithMetadata knowledge_base_items = 2;
+  google.protobuf.Duration thinking_duration = 11;
+  exa.codeium_common_pb.StopReason stop_reason = 12;
+  exa.codeium_common_pb.RecitationMetadata recitation_metadata = 13;
+}
+```
 
-- `KnowledgeBaseItems`
-- `MessageId`
-- `ModifiedResponse`
-- `ProviderAssignedMessageId`
-- `RawThinking`
-- `RecitationMetadata`
-- `Response`
-- `Signature`
-- `StopReason`
-- `Thinking`
-- `ThinkingDuration`
-- `ThinkingRedacted`
-- `ThinkingSignature`
-- `ToolCalls`
+## Field descriptions
 
+From `jsonschema_description:` tags in the binary, matched by field name.
 
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+### `response`
+```
+The text for each option, formatted as the user's response. Must have at least 2 options. Do NOT add an 'Other' option to questions.
+```

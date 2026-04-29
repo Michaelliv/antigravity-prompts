@@ -1,18 +1,19 @@
 # `outline`
 
 **Cortex step type:** `CortexStepOutline`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (4)
+## Fields (4)
 
-Field names recovered from `(*CortexStepOutline).Get*` symbols (includes both inputs and outputs).
+```proto
+message CortexStepOutline {
+  uint32 step_number = 1;
+  string action_name = 2;
+  string json_args = 3;
+  repeated uint32 parent_step_numbers = 4;
+}
+```
 
-- `ActionName`
-- `JsonArgs`
-- `ParentStepNumbers`
-- `StepNumber`
+## Field descriptions
 
-
-## Parameter descriptions
-
-_(no descriptions confidently mapped)_
+From `jsonschema_description:` tags in the binary, matched by field name.

@@ -1,34 +1,31 @@
 # `browser_drag_pixel_to_pixel`
 
 **Cortex step type:** `CortexStepBrowserDragPixelToPixel`
-**Package:** `google3/third_party/jetski/cortex_pb/cortex_go_proto`
+**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Cortex step fields (5)
+## Fields (5)
 
-Field names recovered from `(*CortexStepBrowserDragPixelToPixel).Get*` symbols (includes both inputs and outputs).
-
-- `PageId`
-- `PageMetadata`
-- `ScreenshotsWithDragFeedback`
-- `UserRejected`
-- `Waypoints`
-
-
-## Parameter descriptions (3)
-
-From `jsonschema_description:` struct tags, attributed by content keyword.
-
-### 1.
-```
-X coordinate for starting, continuing, or ending dragging (0-999). Coordinates are scaled to a 1000x1000 grid and mapped to screen dimensions when executing the tool call.
+```proto
+message CortexStepBrowserDragPixelToPixel {
+  string page_id = 1;
+  repeated exa.codeium_common_pb.Point2 waypoints = 2;
+  bool user_rejected = 6;
+  exa.codeium_common_pb.BrowserPageMetadata page_metadata = 7;
+  repeated exa.codeium_common_pb.Media screenshots_with_drag_feedback = 8;
+}
 ```
 
-### 2.
-```
-Y coordinate for starting, continuing, or ending dragging (0-999). Coordinates are scaled to a 1000x1000 grid and mapped to screen dimensions when executing the tool call.
-```
+## Field descriptions
 
-### 3.
+From `jsonschema_description:` tags in the binary, matched by field name.
+
+### `page_id`
 ```
-A series of pixel coordinates defining the drag path. When this tool call is executed, the first waypoint will be clicked, then the mouse will be dragged to each subsequent waypoint in the provided order, and finally the mouse will be released at the last waypoint.
+page_id of the Browser page to read
+```
+```
+page_id of the Browser page to perform the drag operation on
+```
+```
+page_id of the Browser page to scroll.
 ```
