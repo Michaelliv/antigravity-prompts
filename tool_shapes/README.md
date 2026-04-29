@@ -1,49 +1,181 @@
 # Antigravity tool shapes
 
-How the agent's tools are described to the model. Extracted from the same Go binary as the prompts.
+Reverse-engineered tool catalog for the Antigravity coding agent (v1.23.2). Each tool has:
 
-## Files
+- **Cortex step fields**: complete list of field names recovered from Go binary symbols
+  (the proto messages the agent uses internally for each tool call type)
+- **Parameter descriptions**: the text the LLM sees as `description` for each tool argument,
+  pulled from `jsonschema_description:"…"` struct tags in the binary
 
-- **`tool_function_descriptions.md`** — function-level descriptions for ~37 distinct tools (the *what this tool does* sentences the model sees).
-- **`parameter_descriptions.md`** — 185 unique parameter descriptions (the JSON-schema `description` field for individual tool arguments).
-- **`parameter_constraints.txt`** — extracted enum/required constraint strings from `jsonschema:"..."` tags.
-- **`all_param_tags.jsonl`** — raw `(json_name, jsonschema, description)` tuples — many entries have null fields because Go's `jsonschema-go` library derives field names from struct field metadata stored separately in the binary.
+## Method
 
-## Tool name registry (32 confirmed)
+1. Renamed Mach-O section `__lrodata_gopcln` → `__gopclntab` so GoReSym could parse the
+   Google-internal Go 1.27 build.
+2. Walked `(*StructName).GetField` user-function symbols to recover field names of every
+   `CortexStep*` proto message — the model-facing tool-call shapes.
+3. Dumped all `jsonschema_description:"…"` strings from the binary.
+4. Attributed each description to a tool by content-keyword.
 
-These tool names are referenced as bare identifiers in the binary:
+## Stats
 
-- **Filesystem:** `view_file`, `read_file`, `write_to_file`, `edit_file`, `multi_replace_file_content`, `find_by_name`, `grep_search`, `list_dir`, `view_code_item`
-- **Shell:** `run_command`, `send_command_input`
-- **Browser:** `browser_get_dom`, `browser_click`, `read_browser_page`, `browser_scroll`, `browser_mouse_down`, `browser_mouse_up`, `browser_move_mouse`, `browser_type`, `browser_select_option`, `browser_drag`, `capture_browser_screenshot`, `execute_browser_javascript`, `read_url_content`, `list_network_requests`
-- **Knowledge:** `delete_knowledge`
-- **Notebooks:** `edit_notebook`
-- **Agent control:** `send_message`, `manage_task`, `propose_code`, `wait`, `finish`
+- Tools: 130 `CortexStep*` proto messages
+- Field names recovered: 743
+- Parameter descriptions: 173
+- Mapped to a tool: 140 (33 unattributed)
 
-## How tool descriptions are derived
+## Tool inventory
 
-The Go language server uses **`jsonschema-go`** + struct tags. Each tool input is a Go struct like:
+- [`agency_tool_call`](tools/agency_tool_call.md) — 4 fields, 0 param description(s)
+- [`artifact_summary`](tools/artifact_summary.md) — 1 fields, 0 param description(s)
+- [`ask_question`](tools/ask_question.md) — 1 fields, 3 param description(s)
+- [`brain_update`](tools/brain_update.md) — 4 fields, 0 param description(s)
+- [`browser_click_element`](tools/browser_click_element.md) — 7 fields, 2 param description(s)
+- [`browser_drag_pixel_to_pixel`](tools/browser_drag_pixel_to_pixel.md) — 5 fields, 3 param description(s)
+- [`browser_get_dom`](tools/browser_get_dom.md) — 5 fields, 4 param description(s)
+- [`browser_get_network_request`](tools/browser_get_network_request.md) — 4 fields, 1 param description(s)
+- [`browser_input`](tools/browser_input.md) — 7 fields, 5 param description(s)
+- [`browser_list_network_requests`](tools/browser_list_network_requests.md) — 5 fields, 1 param description(s)
+- [`browser_mouse_down`](tools/browser_mouse_down.md) — 4 fields, 2 param description(s)
+- [`browser_mouse_up`](tools/browser_mouse_up.md) — 4 fields, 2 param description(s)
+- [`browser_mouse_wheel`](tools/browser_mouse_wheel.md) — 7 fields, 0 param description(s)
+- [`browser_move_mouse`](tools/browser_move_mouse.md) — 5 fields, 3 param description(s)
+- [`browser_press_key`](tools/browser_press_key.md) — 5 fields, 0 param description(s)
+- [`browser_refresh_page`](tools/browser_refresh_page.md) — 3 fields, 1 param description(s)
+- [`browser_resize_window`](tools/browser_resize_window.md) — 7 fields, 4 param description(s)
+- [`browser_scroll`](tools/browser_scroll.md) — 8 fields, 4 param description(s)
+- [`browser_scroll_down`](tools/browser_scroll_down.md) — 5 fields, 0 param description(s)
+- [`browser_scroll_up`](tools/browser_scroll_up.md) — 5 fields, 0 param description(s)
+- [`browser_select_option`](tools/browser_select_option.md) — 5 fields, 3 param description(s)
+- [`browser_subagent`](tools/browser_subagent.md) — 12 fields, 0 param description(s)
+- [`capture_browser_console_logs`](tools/capture_browser_console_logs.md) — 3 fields, 1 param description(s)
+- [`capture_browser_screenshot`](tools/capture_browser_screenshot.md) — 12 fields, 5 param description(s)
+- [`check_deploy_status`](tools/check_deploy_status.md) — 7 fields, 0 param description(s)
+- [`checkpoint`](tools/checkpoint.md) — 19 fields, 0 param description(s)
+- [`click_browser_pixel`](tools/click_browser_pixel.md) — 8 fields, 3 param description(s)
+- [`clipboard`](tools/clipboard.md) — 1 fields, 0 param description(s)
+- [`cloud_s_q_l_execute_s_q_l`](tools/cloud_s_q_l_execute_s_q_l.md) — 5 fields, 0 param description(s)
+- [`cloud_s_q_l_schema_update`](tools/cloud_s_q_l_schema_update.md) — 4 fields, 0 param description(s)
+- [`code_acknowledgement`](tools/code_acknowledgement.md) — 4 fields, 0 param description(s)
+- [`code_action`](tools/code_action.md) — 22 fields, 0 param description(s)
+- [`code_search`](tools/code_search.md) — 4 fields, 0 param description(s)
+- [`command_status`](tools/command_status.md) — 12 fields, 0 param description(s)
+- [`compile`](tools/compile.md) — 8 fields, 0 param description(s)
+- [`compile_applet`](tools/compile_applet.md) — 2 fields, 0 param description(s)
+- [`compile_diagnostic`](tools/compile_diagnostic.md) — 5 fields, 0 param description(s)
+- [`conversation_history`](tools/conversation_history.md) — 1 fields, 0 param description(s)
+- [`delete_directory`](tools/delete_directory.md) — 2 fields, 0 param description(s)
+- [`deploy_firebase`](tools/deploy_firebase.md) — 1 fields, 0 param description(s)
+- [`deploy_web_app`](tools/deploy_web_app.md) — 17 fields, 0 param description(s)
+- [`dummy`](tools/dummy.md) — 2 fields, 0 param description(s)
+- [`edit_notebook`](tools/edit_notebook.md) — 3 fields, 0 param description(s)
+- [`edit_notebook__args`](tools/edit_notebook__args.md) — 6 fields, 0 param description(s)
+- [`edit_notebook__cell`](tools/edit_notebook__cell.md) — 2 fields, 0 param description(s)
+- [`edit_notebook__modified_cell`](tools/edit_notebook__modified_cell.md) — 4 fields, 0 param description(s)
+- [`edit_notebook__reply`](tools/edit_notebook__reply.md) — 2 fields, 0 param description(s)
+- [`ephemeral_message`](tools/ephemeral_message.md) — 5 fields, 0 param description(s)
+- [`error_message`](tools/error_message.md) — 3 fields, 0 param description(s)
+- [`execute_browser_java_script`](tools/execute_browser_java_script.md) — 13 fields, 0 param description(s)
+- [`execute_notebook`](tools/execute_notebook.md) — 3 fields, 0 param description(s)
+- [`execute_notebook__args`](tools/execute_notebook__args.md) — 5 fields, 0 param description(s)
+- [`execute_notebook__cell_output`](tools/execute_notebook__cell_output.md) — 7 fields, 0 param description(s)
+- [`execute_notebook__reply`](tools/execute_notebook__reply.md) — 4 fields, 0 param description(s)
+- [`file_breakdown`](tools/file_breakdown.md) — 2 fields, 0 param description(s)
+- [`file_change`](tools/file_change.md) — 8 fields, 0 param description(s)
+- [`find`](tools/find.md) — 14 fields, 3 param description(s)
+- [`find_all_references`](tools/find_all_references.md) — 5 fields, 0 param description(s)
+- [`finish`](tools/finish.md) — 2 fields, 0 param description(s)
+- [`generate_image`](tools/generate_image.md) — 6 fields, 3 param description(s)
+- [`generator_metadata`](tools/generator_metadata.md) — 8 fields, 0 param description(s)
+- [`generic`](tools/generic.md) — 2 fields, 0 param description(s)
+- [`git_commit`](tools/git_commit.md) — 3 fields, 0 param description(s)
+- [`grep_search`](tools/grep_search.md) — 15 fields, 0 param description(s)
+- [`install_applet_dependencies`](tools/install_applet_dependencies.md) — 2 fields, 0 param description(s)
+- [`install_applet_package`](tools/install_applet_package.md) — 5 fields, 0 param description(s)
+- [`internal_metadata`](tools/internal_metadata.md) — 1 fields, 0 param description(s)
+- [`internal_search`](tools/internal_search.md) — 2 fields, 0 param description(s)
+- [`invoke_subagent`](tools/invoke_subagent.md) — 5 fields, 1 param description(s)
+- [`k_i_insertion`](tools/k_i_insertion.md) — 1 fields, 0 param description(s)
+- [`knowledge_artifacts`](tools/knowledge_artifacts.md) — 1 fields, 0 param description(s)
+- [`lint_applet`](tools/lint_applet.md) — 3 fields, 0 param description(s)
+- [`lint_diff`](tools/lint_diff.md) — 2 fields, 0 param description(s)
+- [`list_browser_pages`](tools/list_browser_pages.md) — 1 fields, 0 param description(s)
+- [`list_directory`](tools/list_directory.md) — 5 fields, 0 param description(s)
+- [`list_resources`](tools/list_resources.md) — 4 fields, 0 param description(s)
+- [`lookup_knowledge_base`](tools/lookup_knowledge_base.md) — 3 fields, 0 param description(s)
+- [`manager_feedback`](tools/manager_feedback.md) — 2 fields, 0 param description(s)
+- [`mcp_tool`](tools/mcp_tool.md) — 14 fields, 0 param description(s)
+- [`memory`](tools/memory.md) — 4 fields, 0 param description(s)
+- [`metadata`](tools/metadata.md) — 32 fields, 0 param description(s)
+- [`move`](tools/move.md) — 2 fields, 0 param description(s)
+- [`mquery`](tools/mquery.md) — 5 fields, 0 param description(s)
+- [`notify_user`](tools/notify_user.md) — 8 fields, 0 param description(s)
+- [`open_browser_url`](tools/open_browser_url.md) — 10 fields, 2 param description(s)
+- [`outline`](tools/outline.md) — 4 fields, 0 param description(s)
+- [`plan_input`](tools/plan_input.md) — 2 fields, 0 param description(s)
+- [`planner_response`](tools/planner_response.md) — 14 fields, 0 param description(s)
+- [`post_pr_review`](tools/post_pr_review.md) — 7 fields, 0 param description(s)
+- [`proposal_feedback`](tools/proposal_feedback.md) — 4 fields, 0 param description(s)
+- [`propose_code`](tools/propose_code.md) — 4 fields, 12 param description(s)
+- [`r_p_c_action`](tools/r_p_c_action.md) — 5 fields, 0 param description(s)
+- [`read_browser_page`](tools/read_browser_page.md) — 3 fields, 1 param description(s)
+- [`read_deployment_config`](tools/read_deployment_config.md) — 9 fields, 0 param description(s)
+- [`read_knowledge_base_item`](tools/read_knowledge_base_item.md) — 3 fields, 0 param description(s)
+- [`read_notebook`](tools/read_notebook.md) — 3 fields, 0 param description(s)
+- [`read_notebook__args`](tools/read_notebook__args.md) — 3 fields, 0 param description(s)
+- [`read_notebook__reply`](tools/read_notebook__reply.md) — 2 fields, 0 param description(s)
+- [`read_resource`](tools/read_resource.md) — 4 fields, 0 param description(s)
+- [`read_terminal`](tools/read_terminal.md) — 3 fields, 0 param description(s)
+- [`read_url_content`](tools/read_url_content.md) — 6 fields, 1 param description(s)
+- [`resolve_task`](tools/resolve_task.md) — 5 fields, 0 param description(s)
+- [`restart_dev_server`](tools/restart_dev_server.md) — 1 fields, 0 param description(s)
+- [`retrieve_memory`](tools/retrieve_memory.md) — 8 fields, 0 param description(s)
+- [`run_command`](tools/run_command.md) — 28 fields, 5 param description(s)
+- [`run_extension_code`](tools/run_extension_code.md) — 7 fields, 0 param description(s)
+- [`search_knowledge_base`](tools/search_knowledge_base.md) — 5 fields, 0 param description(s)
+- [`search_web`](tools/search_web.md) — 7 fields, 0 param description(s)
+- [`send_command_input`](tools/send_command_input.md) — 10 fields, 1 param description(s)
+- [`set_up_cloud_sql`](tools/set_up_cloud_sql.md) — 4 fields, 0 param description(s)
+- [`set_up_firebase`](tools/set_up_firebase.md) — 8 fields, 0 param description(s)
+- [`shell_exec`](tools/shell_exec.md) — 4 fields, 0 param description(s)
+- [`state`](tools/state.md) — 2 fields, 0 param description(s)
+- [`suggested_responses`](tools/suggested_responses.md) — 1 fields, 0 param description(s)
+- [`system_message`](tools/system_message.md) — 4 fields, 0 param description(s)
+- [`task_boundary`](tools/task_boundary.md) — 7 fields, 0 param description(s)
+- [`tool_call_choice`](tools/tool_call_choice.md) — 3 fields, 0 param description(s)
+- [`tool_call_proposal`](tools/tool_call_proposal.md) — 1 fields, 0 param description(s)
+- [`trajectory_choice`](tools/trajectory_choice.md) — 3 fields, 0 param description(s)
+- [`trajectory_search`](tools/trajectory_search.md) — 6 fields, 0 param description(s)
+- [`update`](tools/update.md) — 4 fields, 0 param description(s)
+- [`user_input`](tools/user_input.md) — 13 fields, 0 param description(s)
+- [`view_code_item`](tools/view_code_item.md) — 4 fields, 1 param description(s)
+- [`view_content_chunk`](tools/view_content_chunk.md) — 3 fields, 0 param description(s)
+- [`view_file`](tools/view_file.md) — 14 fields, 5 param description(s)
+- [`view_file_outline`](tools/view_file_outline.md) — 13 fields, 0 param description(s)
+- [`wait`](tools/wait.md) — 1 fields, 0 param description(s)
+- [`workspace_a_p_i`](tools/workspace_a_p_i.md) — 6 fields, 0 param description(s)
+- [`write_blob`](tools/write_blob.md) — 4 fields, 0 param description(s)
+- [`write_to_file`](tools/write_to_file.md) — 5 fields, 3 param description(s)
 
-```go
-type RunCommandInput struct {
-    Cwd            string `json:"Cwd" jsonschema:"required" jsonschema_description:"..."`
-    CommandLine    string `json:"CommandLine" jsonschema:"required" jsonschema_description:"..."`
-    SafeToAutoRun  bool   `json:"SafeToAutoRun" jsonschema:"required" jsonschema_description:"Set to true if you believe that this command is safe to run WITHOUT user approval..."`
-    WaitMsBeforeAsync int  `json:"WaitMsBeforeAsync" jsonschema:"required" jsonschema_description:"This specifies the number of milliseconds..."`
-    // ...
-}
-```
+### Tools without a CortexStep struct (heuristic groups)
 
-These struct tags survive into the compiled binary as plain strings (the strings we extracted), and `jsonschema-go` walks them at runtime to produce the OpenAI/Anthropic-style function-tool JSON schema sent to the model.
+- [`__deprecated_field__`](tools/__deprecated_field__.md) — 1 description(s)
+- [`browser_subagent_create`](tools/browser_subagent_create.md) — 4 description(s)
+- [`create_knowledge_item`](tools/create_knowledge_item.md) — 4 description(s)
+- [`delete_knowledge`](tools/delete_knowledge.md) — 1 description(s)
+- [`execute_browser_javascript`](tools/execute_browser_javascript.md) — 4 description(s)
+- [`execute_notebook_or_edit`](tools/execute_notebook_or_edit.md) — 4 description(s)
+- [`execute_sed_or_edit`](tools/execute_sed_or_edit.md) — 1 description(s)
+- [`grep`](tools/grep.md) — 3 description(s)
+- [`http_request`](tools/http_request.md) — 3 description(s)
+- [`list_dir`](tools/list_dir.md) — 2 description(s)
+- [`manage_inbox_or_tasks`](tools/manage_inbox_or_tasks.md) — 5 description(s)
+- [`replace_file_content`](tools/replace_file_content.md) — 7 description(s)
+- [`send_message`](tools/send_message.md) — 2 description(s)
+- [`subagent_create`](tools/subagent_create.md) — 12 description(s)
+- [`wait_for_command`](tools/wait_for_command.md) — 1 description(s)
+- [`web_search`](tools/web_search.md) — 1 description(s)
 
-## Highlights
+## Other files
 
-- **Safety gates:** every shell `run_command` and `execute_browser_javascript` requires the model to set a `SafeToAutoRun: true|false` boolean with strict criteria for `true`. The prompts say *"never set this to true, EVEN if the USER asks you to"* if there's any doubt.
-- **Edit tooling:** `multi_replace_file_content` and a single-block variant — both use `replacement_chunk` records with `chunk_index`, `search_target`, `replacement_content`, `allow_multiple`, and optional `start_line`/`end_line`. There's a separate **failed-edit-corrector** model that fixes broken chunks (see `../curated/utility_prompts/replacement_chunks_corrector.md`).
-- **Subagents:** `subagent_create` and `browser_subagent_create` each take a name + a heavily-prompted task description. The task description prompt explicitly tells the model "must be highly detailed, containing a comprehensive task description and all necessary context. Avoid vague instructions; be specific about what to do, when to stop, and clearly state exactly what information the agent should return in its final and only report."
-- **Browser model:** unusual two-tier interface — a **DOM-index click** tool (preferred) plus **pixel coordinates** as fallback. Coordinates are normalized to a 1000×1000 grid and rescaled at execution. Drag uses waypoint arrays.
-- **Importance enum:** every edit tool requires `Importance: high|medium|low` so the system can sort/render edits.
-
-## Caveats
-
-Same as for the prompts: descriptions are reconstructed from contiguous string runs in the Mach-O binary. A few parameter descriptions and tool function descriptions have small amounts of trailing/adjacent text leaked from neighboring strings. To get byte-exact schemas you'd need to either parse the Go reflect/struct metadata in the binary or capture an outgoing model API request via mitmproxy.
+- `configs/` — server-side `*ToolConfig` field inventories
+- `_unmatched_descriptions.md` — short/generic descriptions not attributable to one tool
