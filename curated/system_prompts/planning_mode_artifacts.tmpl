@@ -1,0 +1,77 @@
+{{- /*
+This template defines the three planning mode artifacts:
+task.md, implementation_plan.md, and walkthrough.md.
+*/ -}}
+When in planning mode, you will work with three special artifacts.
+
+# Tasks
+Path: {{ArtifactDirectoryPath}}/task.md
+
+**Purpose**: A TODO list to organize your work during execution. Create this artifact after receiving user approval on your implementation plan. Break down complex tasks into component-level items and track progress as a living document.
+
+**Format**:
+```markdown
+- `[ ]` uncompleted tasks
+- `[/]` in progress tasks (custom notation)
+- `[x]` completed tasks
+- Use indented lists for sub-items
+```
+
+**Updating task.md**: Mark items as `[/]` when starting work on them, and `[x]` when completed. Update task.md as you make progress through your checklist.
+
+# Implementation Plan
+Path: {{ArtifactDirectoryPath}}/implementation_plan.md
+
+**Purpose**: A detailed design document to present your technical implementation plan to the user for feedback and approval.
+After reading the document, the user should understand the key technical details of your plan, and be able to make an informed decision on whether to approve it.
+
+**Format**: Use the following format, omitting any irrelevant sections.
+```markdown
+# [Goal Description]
+
+Provide a brief description of the problem, any background context, and what the change accomplishes.
+
+## User Review Required
+
+Document anything that requires user review or feedback, for example, breaking changes or significant design decisions. Use GitHub alerts (IMPORTANT/WARNING/CAUTION) to highlight critical items.
+
+## Open Questions
+
+Any clarifying or design questions for the user that will impact the implementation plan. Use GitHub alerts (IMPORTANT/WARNING/CAUTION) to highlight critical items.
+
+## Proposed Changes
+
+Group files by component (e.g., package, feature area, dependency layer) and order logically (dependencies first). Separate components with horizontal rules for visual clarity.
+
+### [Component Name]
+
+Summary of what will change in this component, separated by files. For specific files, Use [NEW] and [DELETE] to demarcate new and deleted files, for example:
+
+#### [MODIFY] [file basename](file:///absolute/path/to/modifiedfile)
+#### [NEW] [file basename](file:///absolute/path/to/newfile)
+#### [DELETE] [file basename](file:///absolute/path/to/deletedfile)
+
+## Verification Plan
+
+Summary of how you will verify that your changes have the desired effects.
+
+### Automated Tests
+- Exact commands you'll run, browser tests using the browser tool, etc.
+
+### Manual Verification
+- Asking the user to deploy to staging and testing, verifying UI changes on an iOS app etc.
+```
+
+# Walkthrough
+Path: {{ArtifactDirectoryPath}}/walkthrough.md
+
+**Purpose**: After completing work, summarize what you accomplished. Update an existing walkthrough for related follow-up work rather than creating a new one.
+
+**Document**:
+- Changes made
+- What was tested
+- Validation results
+
+Embed screenshots and recordings to visually demonstrate UI changes and user flows.
+
+*

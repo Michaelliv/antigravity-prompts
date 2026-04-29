@@ -1,0 +1,48 @@
+{{- /*
+Template for RunCommandStringConverter.ToOutputString
+Data: StepStringData with Step field
+*/ -}}
+{{- $step := .Step -}}
+{{- $runCommand := $step.GetRunCommand -}}
+{{- $proposedCmd := $runCommand.GetProposedCommandLine -}}
+{{- $actualCmd := $runCommand.GetCommandLine -}}
+{{- $commandId := $runCommand.GetCommandId -}}
+{{- $statusStr := $step.GetStatus.String -}}
+{{- $combinedOutput := $runCommand.GetCombinedOutput -}}
+{{- $combinedOutputSnapshot := $runCommand.GetCombinedOutputSnapshot -}}
+{{- $sourceStr := $step.GetMetadata.GetSource.String -}}
+
+{{- /* Check if command was edited */ -}}
+{{- if and (ne $proposedCmd $actualCmd) (ne $proposedCmd "") }}
+	The user changed the command to be run to: {{ $actualCmd }}
+{{- end }}
+
+{{- /* Background command special case */ -}}
+{{- if ne $commandId "" }}
+	Background command ID: {{ $commandId }}
+	{{- if $combinedOutputSnapshot }}
+		{{- if ne $combinedOutputSnapshot.GetFull "" }}
+			Output snapshot:
+			{{ $combinedOutputSnapshot.GetFull }}
+		{{- end }}
+	{{- end }}
+{{- else }}
+	{{- if and (eq $statusStr "CORTEX_STEP_STATUS_CANCELED") (not $combinedOutput) }}
+		The user cancelled the command.
+	{{- else if or (eq $statusStr "CORTEX_STEP_STATUS_PENDING") (eq $statusStr "CORTEX_STEP_STATUS_RUNNING") (eq $statusStr "CORTEX_STEP_STATUS_INVALID") (eq $statusStr "CORTEX_STEP_STATUS_ERROR") (eq $statusStr "CORTEX_STEP_STATUS_WAITING") (eq $statusStr "CORTEX_STEP_STATUS_UNSPECIFIED") }}
+		{{- template "defaultStatusOutputString" $step }}
+	{{- else }}
+		{{- /* Handle cancellation with output */ -}}
+		{{- if eq $statusStr "CORTEX_STEP_STATUS_CANCELED" }}
+			The user cancelled the command.
+			The following output was generated before the cancellation.
+		{{- else }}
+			{{- /* Exit code information */ -}}
+			{{- if eq $runCommand.GetExitCode 0 }}
+				The command completed successfully.
+			{{- else }}
+				The command failed with exit code: {{ $runCommand.GetExitCode }}
+			{{- end }}
+		{{- end -}}
+		{{/* Output section */ -}}
+		{{- if or (eq $sourceStr "

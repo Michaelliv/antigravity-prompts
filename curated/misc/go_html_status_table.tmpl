@@ -1,0 +1,108 @@
+{{/* end of Prolog */}}
+
+{{define "StatusTable"}}
+<table id="tr-status">
+	{{range $fam := .Families}}
+	<tr>
+		<td class="family">{{$fam}}</td>
+
+		{{$n := index $.ActiveTraceCount $fam}}
+		<td class="active {{if not $n}}empty{{end}}">
+			{{if $n}}<a href="?fam={{$fam}}&b=-1{{if $.Expanded}}&exp=1{{end}}">{{end}}
+			[{{$n}} active]
+			{{if $n}}</a>{{end}}
+		</td>
+
+		{{$f := index $.CompletedTraces $fam}}
+		{{range $i, $b := $f.Buckets}}
+		{{$empty := $b.Empty}}
+		<td {{if $empty}}class="empty"{{end}}>
+		{{if not $empty}}<a href="?fam={{$fam}}&b={{$i}}{{if $.Expanded}}&exp=1{{end}}">{{end}}
+		[{{.Cond}}]
+		{{if not $empty}}</a>{{end}}
+		</td>
+		{{end}}
+
+		{{$nb := len $f.Buckets}}
+		<td class="latency-first">
+		<a href="?fam={{$fam}}&b={{$nb}}">[minute]</a>
+		</td>
+		<td>
+		<a href="?fam={{$fam}}&b={{add $nb 1}}">[hour]</a>
+		</td>
+		<td>
+		<a href="?fam={{$fam}}&b={{add $nb 2}}">[total]</a>
+		</td>
+
+	</tr>
+	{{end}}
+</table>
+{{end}} {{/* end of StatusTable */}}
+
+{{define "Epilog"}}
+{{if $.Traces}}
+<hr />
+<h3>Family: {{$.Family}}</h3>
+
+{{if or $.Expanded $.Traced}}
+  <a href="?fam={{$.Family}}&b={{$.Bucket}}">[Normal/Summary]</a>
+{{else}}
+  [Normal/Summary]
+{{end}}
+
+{{if or (not $.Expanded) $.Traced}}
+  <a href="?fam={{$.Family}}&b={{$.Bucket}}&exp=1">[Normal/Expanded]</a>
+{{else}}
+  [Normal/Expanded]
+{{end}}
+
+{{if not $.Active}}
+	{{if or $.Expanded (not $.Traced)}}
+	<a href="?fam={{$.Family}}&b={{$.Bucket}}&rtraced=1">[Traced/Summary]</a>
+	{{else}}
+	[Traced/Summary]
+	{{end}}
+	{{if or (not $.Expanded) (not $.Traced)}}
+	<a href="?fam={{$.Family}}&b={{$.Bucket}}&exp=1&rtraced=1">[Traced/Expanded]</a>
+        {{else}}
+	[Traced/Expanded]
+	{{end}}
+{{end}}
+
+{{if $.Total}}
+<p><em>Showing <b>{{len $.Traces}}</b> of <b>{{$.Total}}</b> traces.</em></p>
+{{end}}
+
+<table id="reqs">
+	<caption>
+		{{if $.Active}}Active{{else}}Completed{{end}} Requests
+	</caption>
+	<tr><th>When</th><th>Elapsed&nbsp;(s)</th></tr>
+	{{range $tr := $.Traces}}
+	<tr class="first">
+		<td class="when">{{$tr.When}}</td>
+		<td class="elapsed">{{$tr.ElapsedTime}}</td>
+		<td>{{$tr.Title}}</td>
+		{{/* TODO: include traceID/spanID */}}
+	</tr>
+	{{if $.Expanded}}
+	{{range $tr.Events}}
+	<tr>
+		<td class="when">{{.WhenString}}</td>
+		<td class="elapsed">{{elapsed .Elapsed}}</td>
+		<td>{{if or $.ShowSensitive (not .Sensitive)}}... {{.What}}{{else}}<em>[redacted]</em>{{end}}</td>
+	</tr>
+	{{end}}
+	{{end}}
+	{{end}}
+</table>
+{{end}} {{/* if $.Traces */}}
+
+{{if $.Histogram}}
+<h4>Latency (&micro;s) of {{$.Family}} over {{$.HistogramWindow}}</h4>
+{{$.Histogram}}
+{{end}} {{/* if $.Histogram */}}
+
+	</body>
+</html>
+{{end}} {{/* end of Epilog */}}

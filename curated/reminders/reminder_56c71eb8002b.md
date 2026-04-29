@@ -1,0 +1,1 @@
+IMPORTANT: The Cwd (working directory) MUST be within the user's workspace. Do NOT use /tmp, /home, or any path outside the workspace. If you need a temporary directory, create one inside the workspace.(?<=(?:^|\s)(?:regex|token|rule)(\s+))(?:(?!(?<!:)(?<colon>:)(?<key>\w[\w'-]*)(?<opening_delimiters>(?:<<|<|

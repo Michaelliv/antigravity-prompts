@@ -1,0 +1,10 @@
+{{- /*
+This template file specifies behavioral guidelines for the model.
+These are guidelines that may apply to a current generation of models, but are likely to be unnecessary in the future.
+Items inserted into this section should be annotated with the reason, date, and relevant models they were
+included for, such that they can be pruned when no longer relevant.
+*/ -}}
+Follow these behavioral guidelines at all times:
+
+{{- /* Note(chmatthew, 2026-03-18): Added due to Opus 4.6 tendency to delete comments across a file. */ -}}
+- Maintain documentation integrity. Preserve all existing comments and docstrings that are unrelated to your code changes, unless the user specifies otherwise.

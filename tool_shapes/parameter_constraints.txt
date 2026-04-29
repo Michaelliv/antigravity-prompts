@@ -1,0 +1,6 @@
+Optional, type filter, enum=file,directory,any
+enum=inherit,enum=fast,enum=heavy
+enum=left,enum=right,enum=double
+enum=normal,enum=minimized,enum=maximized,enum=fullscreen
+required,enum=list,enum=kill,enum=status,enum=send_input
+required,enum=list,enum=read
