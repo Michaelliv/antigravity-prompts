@@ -1,0 +1,15 @@
+syntax = "editions";
+
+package logs.proto.cloud_iam;
+
+option java_outer_classname = "AgentMetadataOuterClass";
+option java_multiple_files = true;
+
+import "google/api/inclusion.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+message AgentMetadata {
+  reserved 1;
+  string agent_name = 2;
+}
+

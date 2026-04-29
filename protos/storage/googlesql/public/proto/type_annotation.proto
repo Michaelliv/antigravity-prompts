@@ -1,0 +1,48 @@
+syntax = "proto2";
+
+package googlesql;
+
+option java_package = "com.google.storage.googlesql";
+option java_outer_classname = "TypeAnnotationProto";
+option cc_enable_arenas = true;
+
+import "net/proto2/proto/descriptor.proto";
+
+message FieldFormat {
+  enum Format {
+    DEFAULT_FORMAT = 0;
+    DATE = 1;
+    TIMESTAMP_SECONDS = 2;
+    TIMESTAMP_MILLIS = 3;
+    TIMESTAMP_MICROS = 4;
+    TIMESTAMP_NANOS = 5;
+    TIMESTAMP_PICOS = 20;
+    TIMESTAMP = 21;
+    DATE_DECIMAL = 6;
+    TIME_MICROS = 7;
+    DATETIME_MICROS = 8;
+    ST_GEOGRAPHY_ENCODED = 9;
+    NUMERIC = 10;
+    BIGNUMERIC = 11;
+    JSON = 12;
+    INTERVAL = 14;
+    TOKENLIST = 15;
+    RANGE_DATES_ENCODED = 16;
+    RANGE_DATETIMES_ENCODED = 17;
+    RANGE_TIMESTAMPS_ENCODED = 18;
+    UUID = 19;
+    __FieldFormat_Type__switch_must_have_a_default__ = -1;
+  }
+
+}
+
+message DeprecatedEncoding {
+  enum Encoding {
+    DEFAULT_ENCODING = 0;
+    DATE_DECIMAL = 1;
+    DATE_PACKED32 = 1;
+    __FieldFormat_Encoding__switch_must_have_a_default__ = -1;
+  }
+
+}
+

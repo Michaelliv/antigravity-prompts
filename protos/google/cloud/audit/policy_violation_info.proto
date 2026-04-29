@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package google.cloud.audit;
+
+option java_package = "com.google.cloud.audit";
+option java_outer_classname = "PolicyViolationInfoProto";
+option java_multiple_files = true;
+option cc_enable_arenas = true;
+
+import "google/api/field_behavior.proto";
+import "google/api/inclusion.proto";
+import "google/protobuf/struct.proto";
+
+message PolicyViolationInfo {
+  .google.cloud.audit.OrgPolicyViolationInfo org_policy_violation_info = 1;
+}
+
+message OrgPolicyViolationInfo {
+  message ResourceTagsEntry {
+    string key = 1;
+    string value = 2;
+  }
+
+  .google.protobuf.Struct payload = 1;
+  string resource_type = 2;
+  repeated .google.cloud.audit.OrgPolicyViolationInfo.ResourceTagsEntry resource_tags = 3;
+  repeated .google.cloud.audit.ViolationInfo violation_info = 4;
+}
+
+message ViolationInfo {
+  enum PolicyType {
+    POLICY_TYPE_UNSPECIFIED = 0;
+    BOOLEAN_CONSTRAINT = 1;
+    LIST_CONSTRAINT = 2;
+    CUSTOM_CONSTRAINT = 3;
+  }
+
+  string constraint = 1;
+  string error_message = 2;
+  string checked_value = 3;
+  .google.cloud.audit.ViolationInfo.PolicyType policy_type = 4;
+  .google.protobuf.Struct constraint_violation_info = 5;
+}
+

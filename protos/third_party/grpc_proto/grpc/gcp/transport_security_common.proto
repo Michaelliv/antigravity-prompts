@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package grpc.gcp;
+
+option java_package = "io.grpc.alts.internal";
+option java_outer_classname = "TransportSecurityCommonProto";
+option java_multiple_files = true;
+option go_package = "google.golang.org/grpc/credentials/alts/internal/proto/grpc_gcp";
+
+message RpcProtocolVersions {
+  message Version {
+    uint32 major = 1;
+    uint32 minor = 2;
+  }
+
+  .grpc.gcp.RpcProtocolVersions.Version max_rpc_version = 1;
+  .grpc.gcp.RpcProtocolVersions.Version min_rpc_version = 2;
+}
+
+message TransportProtocolPreferences {
+  repeated string transport_protocol = 1;
+}
+
+message NegotiatedTransportProtocol {
+  string transport_protocol = 1;
+}
+
+enum SecurityLevel {
+  SECURITY_NONE = 0;
+  INTEGRITY_ONLY = 1;
+  INTEGRITY_AND_PRIVACY = 2;
+}
+

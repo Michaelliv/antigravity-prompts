@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package google.cloud.bigquery.storage.v1;
+
+option java_package = "com.google.cloud.bigquery.storage.v1";
+option java_outer_classname = "ProtoBufProto";
+option java_multiple_files = true;
+option csharp_namespace = "Google.Cloud.BigQuery.Storage.V1";
+option php_namespace = "Google\\Cloud\\BigQuery\\Storage\\V1";
+
+import "google/api/auditing.proto";
+import "google/protobuf/any.proto";
+import "net/proto2/proto/descriptor.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+message ProtoSchema {
+  .google.protobuf.Any proto_descriptor_for_documentation = 10000;
+  .proto2.DescriptorProto proto_descriptor = 1;
+}
+
+message ProtoRows {
+  repeated bytes serialized_rows = 1;
+}
+

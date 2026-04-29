@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package google.cloud.bigquery.storage.v1;
+
+option java_package = "com.google.cloud.bigquery.storage.v1";
+option java_outer_classname = "TableProto";
+option java_multiple_files = true;
+option csharp_namespace = "Google.Cloud.BigQuery.Storage.V1";
+option php_namespace = "Google\\Cloud\\BigQuery\\Storage\\V1";
+
+import "google/api/auditing.proto";
+import "google/api/field_behavior.proto";
+import "google/protobuf/wrappers.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+message TableSchema {
+  repeated .google.cloud.bigquery.storage.v1.TableFieldSchema fields = 1;
+}
+
+message TableFieldSchema {
+  message FieldElementType {
+    .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 1;
+  }
+
+  enum Type {
+    TYPE_UNSPECIFIED = 0;
+    STRING = 1;
+    INT64 = 2;
+    DOUBLE = 3;
+    STRUCT = 4;
+    BYTES = 5;
+    BOOL = 6;
+    TIMESTAMP = 7;
+    DATE = 8;
+    TIME = 9;
+    DATETIME = 10;
+    GEOGRAPHY = 11;
+    NUMERIC = 12;
+    BIGNUMERIC = 13;
+    INTERVAL = 14;
+    JSON = 15;
+    RANGE = 16;
+  }
+
+  enum Mode {
+    MODE_UNSPECIFIED = 0;
+    NULLABLE = 1;
+    REQUIRED = 2;
+    REPEATED = 3;
+  }
+
+  string name = 1;
+  .google.cloud.bigquery.storage.v1.TableFieldSchema.Type type = 2;
+  .google.cloud.bigquery.storage.v1.TableFieldSchema.Mode mode = 3;
+  repeated .google.cloud.bigquery.storage.v1.TableFieldSchema fields = 4;
+  string description = 6;
+  int64 max_length = 7;
+  int64 precision = 8;
+  int64 scale = 9;
+  string default_value_expression = 10;
+  .google.protobuf.Int64Value timestamp_precision = 27;
+  .google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType range_element_type = 11;
+}
+
