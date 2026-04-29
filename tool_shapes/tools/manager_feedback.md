@@ -1,9 +1,10 @@
 # `manager_feedback`
 
 **Cortex step type:** `CortexStepManagerFeedback`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (2)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepManagerFeedback {
@@ -14,23 +15,4 @@ message CortexStepManagerFeedback {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `status`
-```
-ID of the command to get status for
-```
-```
-The task ID to manage. Required when Action is 'kill', 'status', or 'send_input'.
-```
-```
-The action to perform: 'list' (list all running tasks), 'kill' (cancel the task), 'status' (check the task status and log URI), 'send_input' (send input to a running task).
-```
-
-### `feedback`
-```
-Set to true to request user feedback on this artifact.
-```
-```
-If applicable, IDs of lint errors this edit aims to fix (they'll have been given in recent IDE feedback). If you believe the edit could fix lints, do specify lint IDs; if the edit is wholly unrelated, do not. A rule of thumb is, if your edit was influenced by lint feedback, include lint IDs. Exercise honest judgement here.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

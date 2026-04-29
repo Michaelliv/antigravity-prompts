@@ -1,6 +1,17 @@
 # Antigravity prompts (extracted)
 
-Prompts and templates extracted from Google Antigravity's native language-server binary.
+Prompts, templates, and tool argument schemas extracted from Google
+Antigravity's native language-server binary.
+
+**Highlights:**
+- 45 curated prompt templates (`curated/`)
+- 421 proto messages (incl. 118 `CortexStep<X>` and 37 `*ToolConfig`) from
+  the embedded `cortex.proto` (Edition 2024)
+- 31 byte-exact inline tool-arg structs
+  ([`tool_shapes/jsonschema_structs/`](tool_shapes/jsonschema_structs/))
+- 179 byte-exact `(field_name, jsonschema-tag)` records recovered from Go
+  reflect-name tables
+  ([`tool_shapes/byte_exact_field_index.md`](tool_shapes/byte_exact_field_index.md))
 
 ## Source
 

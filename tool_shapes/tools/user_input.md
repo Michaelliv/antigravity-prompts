@@ -1,9 +1,10 @@
 # `user_input`
 
 **Cortex step type:** `CortexStepUserInput`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (13)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepUserInput {
@@ -25,28 +26,4 @@ message CortexStepUserInput {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `query`
-```
-If true, returns each line that matches the query, including line numbers and snippets of matching lines (equivalent to 'git grep -nI'). If false, only returns the names of files containing the query (equivalent to 'git grep -l').
-```
-```
-If true, treats Query as a regular expression pattern with special characters like *, +, (, etc. having regex meaning. If false, treats Query as a literal string where all characters are matched exactly. Use false for normal text searches and true only when you specifically need regex functionality.
-```
-
-### `images`
-```
-Optional absolute paths to media files (images, videos, etc.) to provide as context to the subagent. Maximum 3 files.
-```
-```
-Optional absolute paths to the images to use in generation. You can pass in images here if you would like to edit or combine images. You can pass in artifact images and any images in the file system. Note: you cannot pass in more than 3 images.
-```
-
-### `media`
-```
-Optional absolute paths to media files (images, videos, etc.) to provide as context to the subagent. Maximum 3 files.
-```
-```
-The resource types to list network requests for. When empty, all resource types are listed. Supported types: 'Document', 'Stylesheet', 'Image', 'Media', 'Font', 'Script', 'TextTrack', 'XHR', 'Fetch', 'Prefetch', 'EventSource', 'WebSocket', 'Manifest', 'SignedExchange', 'Ping', 'CSPViolationReport', 'Preflight', 'FedCM', 'Other'.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

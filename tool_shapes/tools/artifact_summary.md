@@ -1,9 +1,10 @@
 # `artifact_summary`
 
 **Cortex step type:** `CortexStepArtifactSummary`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (1)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepArtifactSummary {
@@ -13,15 +14,4 @@ message CortexStepArtifactSummary {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `summary`
-```
-One paragraph summary of the Knowledge Item
-```
-```
-Detailed multi-line summary of the artifact file, after edits have been made. Summary does not need to mention the artifact name and should focus on the contents and purpose of the artifact.
-```
-```
-A short, user-friendly summary of the task (1-2 sentences max). This will be displayed to the user in the UI instead of the full task description. Should be concise and describe the goal at a high level.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

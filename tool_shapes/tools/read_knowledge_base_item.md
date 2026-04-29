@@ -1,9 +1,10 @@
 # `read_knowledge_base_item`
 
 **Cortex step type:** `CortexStepReadKnowledgeBaseItem`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (3)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepReadKnowledgeBaseItem {
@@ -15,12 +16,4 @@ message CortexStepReadKnowledgeBaseItem {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `identifier`
-```
-Unique identifier for the resource.
-```
-```
-Name of the task that the browser subagent is performing. This is the identifier that groups the subagent steps together, but should still be a human readable name. This should read like a title, should be properly capitalized and human readable, example: 'Navigating to Example Page'. Replace URLs or non-human-readable expressions like CSS selectors or long text with human-readable terms like 'URL' or 'Page' or 'Submit Button'. Be very sure this task name represents a reasonable chunk of work. It should almost never be the entire user request. This should be the very first argument.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

@@ -1,9 +1,10 @@
 # `browser_resize_window`
 
 **Cortex step type:** `CortexStepBrowserResizeWindow`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (7)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepBrowserResizeWindow {
@@ -19,31 +20,4 @@ message CortexStepBrowserResizeWindow {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `page_id`
-```
-page_id of the Browser page to read
-```
-```
-page_id of the Browser page to perform the drag operation on
-```
-```
-page_id of the Browser page to scroll.
-```
-
-### `width`
-```
-The window contents width in display independent pixels. Only used when WindowState is 'normal'.
-```
-```
-The window state to set. Options: 'normal' (resizable window with specified width/height), 'minimized' (window minimized to taskbar), 'maximized' (window is full screen but shows taskbar), 'fullscreen' (window fills entire screen and hides taskbar). Width and Height are only used when WindowState is 'normal'. Generally you should prefer 'maximized'. If the user asks to make the window smaller or a particular size, use 'normal'. When resetting the window size, prefer 'maximized' instead of 'normal' with specific width/height values. 'minimized' and 'fullscreen' are somewhat jarring, so you should only use these when the user explicitly asks for it.
-```
-
-### `height`
-```
-The window contents height in display independent pixels. Only used when WindowState is 'normal'.
-```
-```
-The window state to set. Options: 'normal' (resizable window with specified width/height), 'minimized' (window minimized to taskbar), 'maximized' (window is full screen but shows taskbar), 'fullscreen' (window fills entire screen and hides taskbar). Width and Height are only used when WindowState is 'normal'. Generally you should prefer 'maximized'. If the user asks to make the window smaller or a particular size, use 'normal'. When resetting the window size, prefer 'maximized' instead of 'normal' with specific width/height values. 'minimized' and 'fullscreen' are somewhat jarring, so you should only use these when the user explicitly asks for it.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

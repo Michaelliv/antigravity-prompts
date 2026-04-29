@@ -1,9 +1,10 @@
 # `code_action`
 
 **Cortex step type:** `CortexStepCodeAction`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (22)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepCodeAction {
@@ -34,15 +35,4 @@ message CortexStepCodeAction {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `description`
-```
-A description of the changes that you are making to the file.
-```
-```
-Human-readable description of the JavaScript to execute
-```
-```
-Human-readable description of what this subagent does and when it should be used.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

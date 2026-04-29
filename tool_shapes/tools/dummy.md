@@ -1,9 +1,10 @@
 # `dummy`
 
 **Cortex step type:** `CortexStepDummy`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (2)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepDummy {
@@ -14,23 +15,4 @@ message CortexStepDummy {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `input`
-```
-The text to input into the element.
-```
-```
-The page_id of the browser page to input text on.
-```
-```
-Index of the annotated DOM element to input text into.
-```
-
-### `output`
-```
-The command ID from a previous run_command call. This is returned in the run_command output.
-```
-```
-Amount of time to wait for output after sending input. Keep the value as small as possible, but large enough to capture the output you expect. Must be between 500ms and 10000ms.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

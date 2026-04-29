@@ -1,9 +1,10 @@
 # `checkpoint`
 
 **Cortex step type:** `CortexStepCheckpoint`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (19)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepCheckpoint {
@@ -23,7 +24,6 @@ message CortexStepCheckpoint {
   repeated string user_requests = 19;
   repeated exa.cortex_pb.SubagentSnapshot subagent_snapshots = 20;
   repeated exa.cortex_pb.TaskSnapshot running_task_snapshots = 21;
-  repeated exa.cortex_pb.CortexStepCheckpoint.EditedFileMapEntry edited_file_map = 7;
   repeated uint32 included_step_indices = 3;
   string memory_summary = 8;
 }
@@ -31,4 +31,4 @@ message CortexStepCheckpoint {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

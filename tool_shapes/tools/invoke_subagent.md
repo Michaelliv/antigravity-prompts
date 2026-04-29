@@ -1,9 +1,10 @@
 # `invoke_subagent`
 
 **Cortex step type:** `CortexStepInvokeSubagent`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (5)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepInvokeSubagent {
@@ -17,25 +18,4 @@ message CortexStepInvokeSubagent {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `subagents`
-```
-A 2-5 word description of the subagent's role. Should read similar to a job title, e.g. 'Codebase Researcher', 'Database Debugger', etc. Should also be detailed enough to distinguish between different subagents who might share similar purposes.
-```
-
-### `prompt`
-```
-Title of the prompt section.
-```
-```
-The text prompt to generate an image for.
-```
-```
-Content of the prompt section.
-```
-
-### `conversation_id`
-```
-Type of reference (e.g., file, conversation_id, url)
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

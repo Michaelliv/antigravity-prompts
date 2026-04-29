@@ -1,9 +1,10 @@
 # `planner_response`
 
 **Cortex step type:** `CortexStepPlannerResponse`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (14)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepPlannerResponse {
@@ -26,9 +27,4 @@ message CortexStepPlannerResponse {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `response`
-```
-The text for each option, formatted as the user's response. Must have at least 2 options. Do NOT add an 'Other' option to questions.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

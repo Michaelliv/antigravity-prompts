@@ -1,9 +1,10 @@
 # `browser_subagent`
 
 **Cortex step type:** `CortexStepBrowserSubagent`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (12)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepBrowserSubagent {
@@ -24,23 +25,4 @@ message CortexStepBrowserSubagent {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `task`
-```
-The input to send to the task. Required when Action is 'send_input'.
-```
-```
-The task ID to manage. Required when Action is 'kill', 'status', or 'send_input'.
-```
-```
-An at most 20 character title describing the task in the imperative form. Will be displayed as the title of the tool in the step UI.
-```
-
-### `media`
-```
-Optional absolute paths to media files (images, videos, etc.) to provide as context to the subagent. Maximum 3 files.
-```
-```
-The resource types to list network requests for. When empty, all resource types are listed. Supported types: 'Document', 'Stylesheet', 'Image', 'Media', 'Font', 'Script', 'TextTrack', 'XHR', 'Fetch', 'Prefetch', 'EventSource', 'WebSocket', 'Manifest', 'SignedExchange', 'Ping', 'CSPViolationReport', 'Preflight', 'FedCM', 'Other'.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

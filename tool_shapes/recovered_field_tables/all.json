@@ -1,0 +1,1026 @@
+{
+  "structs": [
+    {
+      "tool": "Type",
+      "offset_lo": 83006633,
+      "offset_hi": 83006694,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4f4c420",
+      "offset_lo": 83149856,
+      "offset_hi": 83149922,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ExecuteNotebook",
+      "offset_lo": 83173201,
+      "offset_hi": 83173269,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4f59591",
+      "offset_lo": 83203473,
+      "offset_hi": 83203542,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4f6269a",
+      "offset_lo": 83240602,
+      "offset_hi": 83240673,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4f8de88",
+      "offset_lo": 83418760,
+      "offset_hi": 83418837,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "GeneratorMetadata",
+      "offset_lo": 83431865,
+      "offset_hi": 83431943,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fa6ab0",
+      "offset_lo": 83520176,
+      "offset_hi": 83520259,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fb36d4",
+      "offset_lo": 83572436,
+      "offset_hi": 83572610,
+      "field_count": 2,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fb39e3",
+      "offset_lo": 83573219,
+      "offset_hi": 83573306,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fbb1a8",
+      "offset_lo": 83603880,
+      "offset_hi": 83603968,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fbdae3",
+      "offset_lo": 83614435,
+      "offset_hi": 83614524,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fbddab",
+      "offset_lo": 83615147,
+      "offset_hi": 83615236,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fc20fe",
+      "offset_lo": 83632382,
+      "offset_hi": 83632472,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fc4d4b",
+      "offset_lo": 83643723,
+      "offset_hi": 83643905,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x4fcf2a6",
+      "offset_lo": 83686054,
+      "offset_hi": 83686147,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fd49d5",
+      "offset_lo": 83708373,
+      "offset_hi": 83708467,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fd4b4d",
+      "offset_lo": 83708749,
+      "offset_hi": 83709031,
+      "field_count": 3,
+      "desc_count": 3
+    },
+    {
+      "tool": "unknown_0x4fd4f57",
+      "offset_lo": 83709783,
+      "offset_hi": 83710065,
+      "field_count": 3,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fd699d",
+      "offset_lo": 83716509,
+      "offset_hi": 83716604,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fd6aba",
+      "offset_lo": 83716794,
+      "offset_hi": 83716889,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fe9dc0",
+      "offset_lo": 83795392,
+      "offset_hi": 83795488,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fed960",
+      "offset_lo": 83810656,
+      "offset_hi": 83810752,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4fedde0",
+      "offset_lo": 83811808,
+      "offset_hi": 83811904,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4ff0d7e",
+      "offset_lo": 83823998,
+      "offset_hi": 83824095,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4ff1450",
+      "offset_lo": 83825744,
+      "offset_hi": 83825938,
+      "field_count": 2,
+      "desc_count": 1
+    },
+    {
+      "tool": "McpTool",
+      "offset_lo": 83833658,
+      "offset_hi": 83833756,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4ff9aa5",
+      "offset_lo": 83860133,
+      "offset_hi": 83860333,
+      "field_count": 2,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4ffa33d",
+      "offset_lo": 83862333,
+      "offset_hi": 83862433,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x4ffa595",
+      "offset_lo": 83862933,
+      "offset_hi": 83863133,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x4ffdc9a",
+      "offset_lo": 83877018,
+      "offset_hi": 83877119,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "BrowserInput",
+      "offset_lo": 83893590,
+      "offset_hi": 83893692,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "BrowserInput",
+      "offset_lo": 83894202,
+      "offset_hi": 83894304,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "BrowserScroll",
+      "offset_lo": 83905105,
+      "offset_hi": 83905208,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "OpenBrowserUrl",
+      "offset_lo": 83997112,
+      "offset_hi": 83997216,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x501c8e0",
+      "offset_lo": 84003040,
+      "offset_hi": 84003352,
+      "field_count": 3,
+      "desc_count": 3
+    },
+    {
+      "tool": "ReadBrowserPage",
+      "offset_lo": 84019150,
+      "offset_hi": 84019465,
+      "field_count": 3,
+      "desc_count": 3
+    },
+    {
+      "tool": "unknown_0x5022a62",
+      "offset_lo": 84028002,
+      "offset_hi": 84028108,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ListBrowserPages",
+      "offset_lo": 84030228,
+      "offset_hi": 84030334,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ListBrowserPages",
+      "offset_lo": 84031076,
+      "offset_hi": 84031182,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ClickBrowserPixel",
+      "offset_lo": 84046022,
+      "offset_hi": 84046129,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "BrowserScroll",
+      "offset_lo": 84066073,
+      "offset_hi": 84066181,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "OpenBrowserUrl",
+      "offset_lo": 84080311,
+      "offset_hi": 84080529,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "OpenBrowserUrl",
+      "offset_lo": 84080747,
+      "offset_hi": 84080856,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ReadBrowserPage",
+      "offset_lo": 84091808,
+      "offset_hi": 84092028,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "ReadBrowserPage",
+      "offset_lo": 84092688,
+      "offset_hi": 84092798,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ReadBrowserPage",
+      "offset_lo": 84109529,
+      "offset_hi": 84109751,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "ReadBrowserPage",
+      "offset_lo": 84168512,
+      "offset_hi": 84168848,
+      "field_count": 3,
+      "desc_count": 3
+    },
+    {
+      "tool": "ExecuteBrowserJavaScript",
+      "offset_lo": 84201488,
+      "offset_hi": 84201602,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ExecuteBrowserJavaScript",
+      "offset_lo": 84202856,
+      "offset_hi": 84202970,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "CaptureBrowserConsoleLogs",
+      "offset_lo": 84225819,
+      "offset_hi": 84225934,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "CaptureBrowserConsoleLogs",
+      "offset_lo": 84227199,
+      "offset_hi": 84227314,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "BrowserSelectOption",
+      "offset_lo": 84247928,
+      "offset_hi": 84248044,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x505cde5",
+      "offset_lo": 84266469,
+      "offset_hi": 84266586,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "EphemeralMessage",
+      "offset_lo": 84267405,
+      "offset_hi": 84267639,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "BrowserDragPixelToPixel",
+      "offset_lo": 84281767,
+      "offset_hi": 84281885,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x50684c5",
+      "offset_lo": 84313285,
+      "offset_hi": 84313404,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "ExecuteBrowserJavaScript",
+      "offset_lo": 84643504,
+      "offset_hi": 84643744,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "ExecuteBrowserJavaScript",
+      "offset_lo": 84667713,
+      "offset_hi": 84667834,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "CaptureBrowserConsoleLogs",
+      "offset_lo": 84682663,
+      "offset_hi": 84682907,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "CaptureBrowserConsoleLogs",
+      "offset_lo": 84684127,
+      "offset_hi": 84684249,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x50d00ec",
+      "offset_lo": 84738284,
+      "offset_hi": 84738532,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x50d7a89",
+      "offset_lo": 84769417,
+      "offset_hi": 84769669,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x50d8071",
+      "offset_lo": 84770929,
+      "offset_hi": 84771055,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x50dea03",
+      "offset_lo": 84797955,
+      "offset_hi": 84798082,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x511c7d0",
+      "offset_lo": 85051344,
+      "offset_hi": 85051472,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "GeneratorMetadata",
+      "offset_lo": 85179068,
+      "offset_hi": 85179197,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5144f86",
+      "offset_lo": 85217158,
+      "offset_hi": 85217289,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x514aa2b",
+      "offset_lo": 85240363,
+      "offset_hi": 85240495,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5152cba",
+      "offset_lo": 85273786,
+      "offset_hi": 85273920,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5153494",
+      "offset_lo": 85275796,
+      "offset_hi": 85275930,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5163b18",
+      "offset_lo": 85343000,
+      "offset_hi": 85343136,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5164a80",
+      "offset_lo": 85346944,
+      "offset_hi": 85347080,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x517703f",
+      "offset_lo": 85422143,
+      "offset_hi": 85422283,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x517752b",
+      "offset_lo": 85423403,
+      "offset_hi": 85423543,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "GeneratorMetadata",
+      "offset_lo": 85440702,
+      "offset_hi": 85440843,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x517c074",
+      "offset_lo": 85442676,
+      "offset_hi": 85442817,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x517c4dc",
+      "offset_lo": 85443804,
+      "offset_hi": 85443945,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x51d6da0",
+      "offset_lo": 85814688,
+      "offset_hi": 85814833,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x51d746c",
+      "offset_lo": 85816428,
+      "offset_hi": 85816573,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x51da16e",
+      "offset_lo": 85827950,
+      "offset_hi": 85828096,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "McpTool",
+      "offset_lo": 85843501,
+      "offset_hi": 85843648,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x51e37a7",
+      "offset_lo": 85866407,
+      "offset_hi": 85866703,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x51efd4b",
+      "offset_lo": 85917003,
+      "offset_hi": 85917154,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5204908",
+      "offset_lo": 86001928,
+      "offset_hi": 86002080,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x521c96f",
+      "offset_lo": 86100335,
+      "offset_hi": 86100493,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x52316c8",
+      "offset_lo": 86185672,
+      "offset_hi": 86185992,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x5238278",
+      "offset_lo": 86213240,
+      "offset_hi": 86213402,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5239064",
+      "offset_lo": 86216804,
+      "offset_hi": 86216966,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x52b36fc",
+      "offset_lo": 86718204,
+      "offset_hi": 86718548,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "Type",
+      "offset_lo": 86866148,
+      "offset_hi": 86866326,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x52e289c",
+      "offset_lo": 86911132,
+      "offset_hi": 86911315,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "Type",
+      "offset_lo": 86974563,
+      "offset_hi": 86974751,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x52f705d",
+      "offset_lo": 86995037,
+      "offset_hi": 86995228,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "Type",
+      "offset_lo": 87368872,
+      "offset_hi": 87369065,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x53546c3",
+      "offset_lo": 87377603,
+      "offset_hi": 87377798,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "Type",
+      "offset_lo": 87378188,
+      "offset_hi": 87378383,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "Type",
+      "offset_lo": 87384259,
+      "offset_hi": 87384651,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x5365878",
+      "offset_lo": 87447672,
+      "offset_hi": 87448072,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x5368a8c",
+      "offset_lo": 87460492,
+      "offset_hi": 87461296,
+      "field_count": 4,
+      "desc_count": 4
+    },
+    {
+      "tool": "unknown_0x536b077",
+      "offset_lo": 87470199,
+      "offset_hi": 87470402,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x537940a",
+      "offset_lo": 87528458,
+      "offset_hi": 87528668,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x537c257",
+      "offset_lo": 87540311,
+      "offset_hi": 87540524,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x53ea4b9",
+      "offset_lo": 87991481,
+      "offset_hi": 87991701,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x53ea671",
+      "offset_lo": 87991921,
+      "offset_hi": 87992141,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x53f6130",
+      "offset_lo": 88039728,
+      "offset_hi": 88039952,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x53f63d0",
+      "offset_lo": 88040400,
+      "offset_hi": 88040624,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "CreditReason",
+      "offset_lo": 88102747,
+      "offset_hi": 88102981,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "CreditReason",
+      "offset_lo": 88105330,
+      "offset_hi": 88105565,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x543b648",
+      "offset_lo": 88323656,
+      "offset_hi": 88323899,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x543c2ab",
+      "offset_lo": 88326827,
+      "offset_hi": 88327071,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x543e34b",
+      "offset_lo": 88335179,
+      "offset_hi": 88335426,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5442ed8",
+      "offset_lo": 88354520,
+      "offset_hi": 88354768,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5446694",
+      "offset_lo": 88368788,
+      "offset_hi": 88369040,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x547a7d0",
+      "offset_lo": 88582096,
+      "offset_hi": 88582361,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x547d182",
+      "offset_lo": 88592770,
+      "offset_hi": 88593038,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x547e792",
+      "offset_lo": 88598418,
+      "offset_hi": 88598687,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x548030f",
+      "offset_lo": 88605455,
+      "offset_hi": 88605726,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x548d108",
+      "offset_lo": 88658184,
+      "offset_hi": 88658461,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x548e158",
+      "offset_lo": 88662360,
+      "offset_hi": 88662918,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x5491ed3",
+      "offset_lo": 88678099,
+      "offset_hi": 88678382,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54b16b1",
+      "offset_lo": 88807089,
+      "offset_hi": 88807382,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54b4bdc",
+      "offset_lo": 88820700,
+      "offset_hi": 88820999,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54b5671",
+      "offset_lo": 88823409,
+      "offset_hi": 88823712,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54b8130",
+      "offset_lo": 88834352,
+      "offset_hi": 88834656,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54ccb40",
+      "offset_lo": 88918848,
+      "offset_hi": 88919161,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54cda30",
+      "offset_lo": 88922672,
+      "offset_hi": 88922992,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54d0e92",
+      "offset_lo": 88936082,
+      "offset_hi": 88936417,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54dfad8",
+      "offset_lo": 88996568,
+      "offset_hi": 88996904,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54e401e",
+      "offset_lo": 89014302,
+      "offset_hi": 89014659,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54f07d0",
+      "offset_lo": 89065424,
+      "offset_hi": 89065784,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x54f2a32",
+      "offset_lo": 89074226,
+      "offset_hi": 89074968,
+      "field_count": 2,
+      "desc_count": 2
+    },
+    {
+      "tool": "unknown_0x54f32ee",
+      "offset_lo": 89076462,
+      "offset_hi": 89076836,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x55008fe",
+      "offset_lo": 89131262,
+      "offset_hi": 89131650,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5503dd9",
+      "offset_lo": 89144793,
+      "offset_hi": 89145200,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x550c221",
+      "offset_lo": 89178657,
+      "offset_hi": 89179070,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x550cf21",
+      "offset_lo": 89181985,
+      "offset_hi": 89182402,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x551e828",
+      "offset_lo": 89253928,
+      "offset_hi": 89254395,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5522c92",
+      "offset_lo": 89271442,
+      "offset_hi": 89271917,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5561408",
+      "offset_lo": 89527304,
+      "offset_hi": 89527869,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x557612f",
+      "offset_lo": 89612591,
+      "offset_hi": 89613182,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x557a578",
+      "offset_lo": 89630072,
+      "offset_hi": 89630691,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5581e38",
+      "offset_lo": 89660984,
+      "offset_hi": 89661632,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5589979",
+      "offset_lo": 89692537,
+      "offset_hi": 89693227,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x558eef8",
+      "offset_lo": 89714424,
+      "offset_hi": 89715152,
+      "field_count": 1,
+      "desc_count": 1
+    },
+    {
+      "tool": "unknown_0x5592427",
+      "offset_lo": 89728039,
+      "offset_hi": 89728827,
+      "field_count": 1,
+      "desc_count": 1
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 # `browser_click_element`
 
 **Cortex step type:** `CortexStepBrowserClickElement`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (7)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepBrowserClickElement {
@@ -19,37 +20,4 @@ message CortexStepBrowserClickElement {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `page_id`
-```
-page_id of the Browser page to read
-```
-```
-page_id of the Browser page to perform the drag operation on
-```
-```
-page_id of the Browser page to scroll.
-```
-
-### `index`
-```
-index of the element to scroll on
-```
-```
-Index of the annotated DOM element to click on.
-```
-```
-Index of the annotated DOM element to input text into.
-```
-
-### `description`
-```
-A description of the changes that you are making to the file.
-```
-```
-Human-readable description of the JavaScript to execute
-```
-```
-Human-readable description of what this subagent does and when it should be used.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

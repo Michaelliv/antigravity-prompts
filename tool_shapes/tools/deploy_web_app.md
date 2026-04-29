@@ -1,9 +1,10 @@
 # `deploy_web_app`
 
 **Cortex step type:** `CortexStepDeployWebApp`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (17)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepDeployWebApp {
@@ -12,7 +13,6 @@ message CortexStepDeployWebApp {
   string project_id = 11;
   string framework = 3;
   bool user_confirmed = 4;
-  repeated exa.cortex_pb.CortexStepDeployWebApp.FileUploadStatusEntry file_upload_status = 5;
   exa.codeium_common_pb.AntigravityDeployment deployment = 6;
   string deployment_config_uri = 7;
   exa.codeium_common_pb.WebAppDeploymentConfig deployment_config_output = 8;
@@ -29,4 +29,4 @@ message CortexStepDeployWebApp {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

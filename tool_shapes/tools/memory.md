@@ -1,9 +1,10 @@
 # `memory`
 
 **Cortex step type:** `CortexStepMemory`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (4)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepMemory {
@@ -16,20 +17,4 @@ message CortexStepMemory {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `memory`
-```
-Number of characters to view. Make this as small as possible to avoid excessive memory usage.
-```
-
-### `action`
-```
-The input to send to the task. Required when Action is 'send_input'.
-```
-```
-The ID of the message to read. Required when Action is 'read'.
-```
-```
-The type of cell: 'code', 'markdown', or 'raw'. Required for 'add' action.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

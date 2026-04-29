@@ -1,9 +1,10 @@
 # `command_status`
 
 **Cortex step type:** `CortexStepCommandStatus`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (12)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepCommandStatus {
@@ -24,31 +25,4 @@ message CortexStepCommandStatus {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `status`
-```
-ID of the command to get status for
-```
-```
-The task ID to manage. Required when Action is 'kill', 'status', or 'send_input'.
-```
-```
-The action to perform: 'list' (list all running tasks), 'kill' (cancel the task), 'status' (check the task status and log URI), 'send_input' (send input to a running task).
-```
-
-### `delta`
-```
-Vertical scroll delta in pixels. Positive values scroll down, negative values scroll up.
-```
-```
-Horizontal scroll delta in pixels. Positive values scroll to the right, negative values scroll to the left.
-```
-
-### `error`
-```
-If true, multiple occurrences of 'targetContent' will be replaced by 'replacementContent' if they are found. Otherwise if multiple occurences are found, an error will be returned.
-```
-```
-The exact string to be replaced. This must be the exact character-sequence to be replaced, including whitespace. Be very careful to include any leading whitespace otherwise this will not work at all. This must be a unique substring within the file, or else it will error.
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.

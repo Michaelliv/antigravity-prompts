@@ -1,31 +1,73 @@
 # Antigravity tool shapes
 
-Tool input schemas reverse-engineered from the Antigravity language server binary.
+Tool input schemas reverse-engineered from the Antigravity language-server
+binary. Two complementary sources are combined here — see *Source of truth*
+below for what each one really represents.
 
 ## Source of truth
 
-The canonical schema is `third_party/jetski/cortex_pb/cortex.proto`, recovered as a
-`FileDescriptorProto` byte-blob embedded in the Go binary. Standard tools
-(`protodump`, `redress`, GoReSym) failed to parse it because the file uses
-Edition 2024 features unsupported by their pinned protobuf-go versions, but the
-Python `protobuf` library parses it partially-but-richly enough to recover all
-messages and fields.
+There are **two** distinct kinds of "tool shape" inside the binary, and
+they are not the same object:
+
+1. **Cortex-step proto messages** (`CortexStep<X>` in `cortex.proto`). These
+   describe the **outcome state** of a tool call — the structured record
+   that gets stored in the trajectory after the tool runs. Recovered
+   byte-exact from a `FileDescriptorProto` blob embedded in the Go binary.
+   `protodump`/`redress`/GoReSym all fail on it because of Edition 2024
+   features in the file; the Python `protobuf` library parses it
+   partially-but-richly enough to recover every message and field.
+
+2. **JSON-schema tool-arg Go structs** (e.g. `tools.runCommandArgs`,
+   `notebook.editNotebookArgs`). These are what the model fills in when
+   calling a tool. They live in a separate Go object hierarchy with
+   their own field names. Recovered byte-exact from two locations in
+   the binary:
+   - `utils.ToJsonSchemaString[go.shape.struct {…}]` and
+     `utils.ParseToolArgs[go.shape.struct {…}]` generic-instantiation
+     symbols, which carry the full inline struct body for anonymous
+     argument structs.
+   - Go reflect-name records in rodata, which carry per-named-type
+     `(flag, name, tag)` triples for field-by-field arg structs.
+
+The two namespaces share neither identity nor field-name conventions, so
+you can't statically attribute a recovered tool-arg field to a specific
+`CortexStep<X>` message with confidence. The flat
+[`byte_exact_field_index.md`](byte_exact_field_index.md) presents the
+recovered tags un-attributed; map them to tools by reading the
+description text.
 
 ## Stats
 
-- 421 message types
+- 421 proto message types (in `cortex.proto`)
 - 70 enums
-- 121 `CortexStep*` tool-input messages
+- 118 `CortexStep*` tool-output messages (one Markdown stub each)
 - 37 `*ToolConfig` server-side configs
-- 173 parameter descriptions (`jsonschema_description:` tags)
+- 31 byte-exact inline tool-arg structs (`jsonschema_structs/`)
+- 122 byte-exact rname clusters (`recovered_field_tables/`)
+- 179 byte-exact `(field, tag)` pairs (`byte_exact_field_index.md`)
 
 ## Files
 
-- `tools/*.md` — one file per `CortexStep*` proto message: full proto schema + matched param descriptions
-- `configs/*.md` — `*ToolConfig` server-side configs (timeouts, force-disable, etc.)
-- `../protos/third_party/jetski/cortex_pb/cortex.proto` — full reconstructed proto file
-- `../protos/third_party/jetski/cortex_pb/cortex.fdproto.bin` — binary FileDescriptorProto (use with `protoc --descriptor_set_in`)
-- `../protos/third_party/jetski/cortex_pb/cortex.textproto` — textproto dump of the FileDescriptorProto
+- [`byte_exact_field_index.md`](byte_exact_field_index.md) — **canonical**
+  flat catalog of every recovered `(field_name, jsonschema-tag)` pair, with
+  binary offsets. Un-attributed by design.
+- `tools/*.md` — one file per `CortexStep*` proto message: just the
+  proto schema. Field-description attribution intentionally omitted; see
+  `byte_exact_field_index.md` instead.
+- `jsonschema_structs/*.md` — byte-exact tool-arg structs whose body was
+  inlined in a `ToJsonSchemaString[go.shape.struct {…}]` symbol
+  (anonymous structs only).
+- `recovered_field_tables/*.md` — byte-exact rname-record clusters,
+  including their binary offsets and a (best-effort, sometimes wrong)
+  spatial guess at a parent `CortexStep<X>` token nearby.
+- `configs/*.md` — `*ToolConfig` server-side configs (timeouts,
+  force-disable, etc.) recovered from `cortex.proto`.
+- `../protos/third_party/jetski/cortex_pb/cortex.proto` — full
+  reconstructed proto file.
+- `../protos/third_party/jetski/cortex_pb/cortex.fdproto.bin` — binary
+  FileDescriptorProto (use with `protoc --descriptor_set_in`).
+- `../protos/third_party/jetski/cortex_pb/cortex.textproto` — textproto
+  dump of the FileDescriptorProto.
 
 ## Tool inventory
 

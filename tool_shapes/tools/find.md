@@ -1,9 +1,10 @@
 # `find`
 
 **Cortex step type:** `CortexStepFind`
-**Source:** `third_party/jetski/cortex_pb/cortex.proto`
 
-## Fields (14)
+**Source:** `third_party/jetski/cortex_pb/cortex.proto` (byte-exact, recovered from the embedded `FileDescriptorProto`)
+
+## Proto schema
 
 ```proto
 message CortexStepFind {
@@ -26,31 +27,4 @@ message CortexStepFind {
 
 ## Field descriptions
 
-From `jsonschema_description:` tags in the binary, matched by field name.
-
-### `pattern`
-```
-The search term or pattern to look for within files.
-```
-```
-Optional, Pattern to search for, supports glob format
-```
-```
-Optional, whether the full absolute path must match the glob pattern, default: only filename needs to match. Take care when specifying glob patterns with this flag on, e.g when FullPath is on, pattern '*.py' will not match to the file '/foo/bar.py', but pattern '**/*.py' will match.
-```
-
-### `type`
-```
-Optional, type filter, enum=file,directory,any
-```
-```
-Type name of the subagent to invoke.
-```
-```
-Type of reference (e.g., file, conversation_id, url)
-```
-
-### `extensions`
-```
-Optional, file extensions to include (without leading .), matching paths must match at least one of the included extensions
-```
+See [`../byte_exact_field_index.md`](../byte_exact_field_index.md) for byte-exact `(field_name, jsonschema tag)` records recovered from Go reflect-name tables in the binary. Cortex-step proto messages and JSON-schema tool-arg structs are different namespaces, so a clean static attribution from one to the other is not possible. Match by reading the description text against this tool's purpose.
