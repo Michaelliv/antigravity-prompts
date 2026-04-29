@@ -84,3 +84,31 @@ them** is one of:
 
 Until one of those: this repo is the best static reconstruction
 achievable.
+
+### 5. BoringCrypto does NOT honor SSLKEYLOGFILE
+
+We tested whether the FIPS BoringCrypto Go variant in this binary
+honors the `SSLKEYLOGFILE` env var (which stock Go's `crypto/tls` writes
+master secrets to, for use with Wireshark). Empirically:
+
+- Set `SSLKEYLOGFILE=/tmp/keys.log` in Electron's environment so the LS
+  inherits it.
+- Captured all port-443 traffic on en0 with `tcpdump`.
+- Decrypted the pcap with `tshark -o tls.keylog_file:...`.
+
+Result: all decryptable HTTP/2 streams turned out to be **Chromium
+(Electron) traffic** — open-vsx.org, browser.events.data.microsoft.com,
+antigravity-auto-updater. **Every Go-LS-originated TLS session
+(16× daily-cloudcode-pa, 6× cloudcode-pa, 8× antigravity-unleash, 4×
+oauth2.googleapis.com, 2× api.anthropic.com)** had zero keys exported
+to the keylog file. Confirms BoringCrypto's TLS stack ignores the
+SSLKEYLOGFILE env var entirely.
+
+Bonus discovery from this experiment: Antigravity makes direct calls to
+**`api.anthropic.com`** for Claude model traffic — not all model traffic
+goes through Google's Code Assist API. Some routes through Anthropic
+directly.
+
+So mitmproxy and SSLKEYLOGFILE are both dead-ends for capturing the model
+API request body. Only lldb attach / binary patch / DYLD interposition
+remain.
